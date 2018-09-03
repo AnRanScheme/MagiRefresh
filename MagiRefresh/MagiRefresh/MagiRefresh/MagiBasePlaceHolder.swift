@@ -70,11 +70,11 @@ class MagiBasePlaceHolder: UIView {
         super.layoutSubviews()
         guard let view = self.superview else { return }
         if view.isKind(
-            of: UIScrollView.classForCoder()) {
-            self.frame = CGRect.init(x: 0,
-                                     y: 0,
-                                     width: view.magi_width,
-                                     height: view.magi_height)
+            of: UIScrollView.self) {
+            self.frame = CGRect(x: 0,
+                                y: 0,
+                                width: view.magi_width,
+                                height: view.magi_height)
             
         }
         setupSubviews()
@@ -123,7 +123,7 @@ extension MagiBasePlaceHolder {
         title: String,
         detailTitle: String,
         refreshBtnTitle: String?,
-        refreshClosure:@escaping MagiTapClosure) {
+        refreshClosure: @escaping MagiTapClosure?) {
         self.imageName = imageName
         self.title = title
         self.detailTitle = detailTitle
@@ -170,8 +170,8 @@ extension MagiBasePlaceHolder {
 // MARK: - 类方法
 extension MagiBasePlaceHolder {
     
-    // MARK: - target/action 响应
-    public class func createPlaceHolderViewWithAction(
+    // target/action 响应
+    public class func createPlaceHolderWithAction(
         imageName: String,
         title: String,
         detailTitle: String,
@@ -194,12 +194,12 @@ extension MagiBasePlaceHolder {
     }
     
     // Closure 回调方法
-    public class func createPlaceHolderViewWithClosure(
+    public class func createPlaceHolderWithClosure(
         imageName: String,
         title: String,
         detailTitle: String,
         refreshBtnTitle: String,
-        refreshClosure :@escaping MagiTapClosure) -> MagiPlaceHolder {
+        refreshClosure: @escaping MagiTapClosure) -> MagiPlaceHolder {
         
         let placeHolder: MagiPlaceHolder = MagiPlaceHolder(
             frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -215,12 +215,20 @@ extension MagiBasePlaceHolder {
     }
     
     /// 自定义显示界面
-    public class func createCustomPlaceHolderView(_ customView: UIView) -> MagiPlaceHolder {
+    public class func createCustomPlaceHolder(_ customView: UIView) -> MagiPlaceHolder {
         let placeHolder: MagiPlaceHolder = MagiPlaceHolder(
             frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         placeHolder.createCustomPlaceHolder(customView)
         
         return placeHolder
+    }
+    
+    func refreshView(_ completion: MagiTapClosure?) {
+        self.refreshClosure = completion
+    }
+
+    func tapBlankView(_ completion: MagiTapClosure?) {
+        self.tapBlankViewClosure = completion
     }
     
 }
