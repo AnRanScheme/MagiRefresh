@@ -30,10 +30,6 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         setupUI()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     deinit {
         print(self.debugDescription+"------销毁了")
@@ -52,6 +48,7 @@ class TableViewController: UITableViewController {
         else {
             automaticallyAdjustsScrollViewInsets = false
         }
+        tableView.magiRefresh.header = MagiRefreshHeaderConrol()
         setupCustomPlaceHolderView()
     }
     

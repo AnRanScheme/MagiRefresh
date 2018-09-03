@@ -123,7 +123,7 @@ extension MagiBasePlaceHolder {
         title: String,
         detailTitle: String,
         refreshBtnTitle: String?,
-        refreshClosure: @escaping MagiTapClosure?) {
+        refreshClosure: @escaping MagiTapClosure) {
         self.imageName = imageName
         self.title = title
         self.detailTitle = detailTitle

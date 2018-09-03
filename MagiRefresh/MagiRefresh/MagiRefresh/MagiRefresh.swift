@@ -24,7 +24,35 @@ class MagiRefresh {
             }
         }
     }
-
+    
+    var header: MagiRefreshHeaderConrol? {
+        didSet {
+            guard let scrollView = self.scrollView else { return }
+            scrollView.subviews.forEach { (view) in
+                if view.isKind(of: MagiRefreshHeaderConrol.self) {
+                    view.removeFromSuperview()
+                }
+            }
+            if let header = header {
+                scrollView.addSubview(header)
+            }
+        }
+    }
+    
+    var footer: MagiRefreshFooterConrol? {
+        didSet {
+            guard let scrollView = self.scrollView else { return }
+            scrollView.subviews.forEach { (view) in
+                if view.isKind(of: MagiRefreshFooterConrol.self) {
+                    view.removeFromSuperview()
+                }
+            }
+            if let header = header {
+                scrollView.addSubview(header)
+            }
+        }
+    }
+    
     var scrollView: UIScrollView?
     
     // MAKR: - 根据 DataSource 判断是否自动显示 PlaceHolder
