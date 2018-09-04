@@ -36,7 +36,6 @@ class MagiNativeFooter: MagiRefreshFooterConrol {
     
     override func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
         super.magiRefreshStateDidChange(status)
-        print("footr-----status---------\(status)")
         switch status {
         case .none:
             break

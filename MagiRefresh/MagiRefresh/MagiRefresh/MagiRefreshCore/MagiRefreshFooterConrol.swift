@@ -169,9 +169,6 @@ extension MagiRefreshFooterConrol {
             }
         }
         scrollView?.insetBottom = presetContentInsets.bottom+magi_height
-        print("scrollView?.insetBottom  --------- \(scrollView?.insetBottom )")
-        print("presetContentInsets.bottom --------- \(presetContentInsets.bottom)")
-        print("magi_height  --------- \(magi_height)")
     }
     
     fileprivate func setCompletion() {

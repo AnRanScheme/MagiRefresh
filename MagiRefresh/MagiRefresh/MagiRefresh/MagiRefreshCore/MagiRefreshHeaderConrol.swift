@@ -158,9 +158,6 @@ extension MagiRefreshHeaderConrol {
             }
         }else{
             scrollView?.insetTop = magi_height + presetContentInsets.top
-            print("scrollView?.insetTop------\(scrollView?.insetTop)")
-            print("presetContentInsets.top------\(presetContentInsets.top)")
-            print("magi_height------\(magi_height)")
         }
     }
     

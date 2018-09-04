@@ -36,7 +36,6 @@ class MagiNativeHeader: MagiRefreshHeaderConrol {
     
     override func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
         super.magiRefreshStateDidChange(status)
-        print("status---------\(status)")
         switch status {
         case .none:
             break
