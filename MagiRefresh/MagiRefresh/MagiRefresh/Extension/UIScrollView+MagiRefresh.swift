@@ -82,9 +82,9 @@ extension UIScrollView {
         }
         set{
             var inset = self.contentInset
-            inset.bottom = newValue
+            inset.top = newValue
             if #available(iOS 11.0, *) {
-                inset.bottom -= (self.adjustedContentInset.top - self.contentInset.top)
+                inset.top -= (self.adjustedContentInset.top - self.contentInset.top)
             }
             self.contentInset = inset
         }

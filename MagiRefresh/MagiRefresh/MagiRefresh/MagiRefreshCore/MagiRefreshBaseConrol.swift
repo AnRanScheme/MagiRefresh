@@ -33,8 +33,7 @@ class MagiRefreshBaseConrol: UIView {
     var refreshStatus: MagiRefreshStatus = .none {
         willSet {
             if refreshStatus == newValue { return }
-             print("refreshStatus------\(refreshStatus)")
-            switch refreshStatus {
+            switch newValue {
             case .none:
                 UIView.setAnimate(animations: {
                     self.alpha = 0.0
@@ -65,7 +64,7 @@ class MagiRefreshBaseConrol: UIView {
                     self.alpha = 1.0
                 }, completion: nil)
             }
-            magiRefreshControlStateDidChange(refreshStatus)
+            magiRefreshControlStateDidChange(newValue)
         }
     }
     /// When the system automatically or manually adjust contentInset,
@@ -332,8 +331,8 @@ class MagiRefreshBaseConrol: UIView {
     }
     
     fileprivate func _endRefresh() {
-        magiRefreshControlStateDidChange(.willEndRefresh)
         refreshStatus = .scrolling
+        magiRefreshControlStateDidChange(.willEndRefresh)
         setScrollViewToOriginalLocation()
     }
     

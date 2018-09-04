@@ -29,32 +29,23 @@ class MagiRefreshFooterConrol: MagiRefreshBaseConrol {
             if let realContentInset = self.scrollView?.realContentInset {
                 self.presetContentInsets = realContentInset
             }
-            
-            UIView.animate(withDuration: 0.15,
-                           delay: 0,
-                           options: .curveLinear,
-                           animations: {
-                            self.setAnimated()
-            },
-                           completion: { (isFinished) in
-                            self.setCompletion()
+            UIView.setAnimate(animations: {
+                 self.setAnimated()
+            }, completion: { (isFinished) in
+                 self.setCompletion()
             })
         }
     }
     
     override func setScrollViewToOriginalLocation() {
         super.setScrollViewToOriginalLocation()
-        UIView.animate(withDuration: 0.15,
-                       delay: 0,
-                       options: UIViewAnimationOptions.curveLinear,
-                       animations: {
-                        self.isAnimating = true
-                        self.scrollView?.insetTop = self.presetContentInsets.top;
-        },
-                       completion: { (isFinished) in
-                        self.isAnimating = false
-                        self.isTriggeredRefreshByUser = false
-                        self.refreshStatus = .none
+        UIView.setAnimate(animations: {
+            self.isAnimating = true
+            self.scrollView?.insetBottom = self.presetContentInsets.bottom
+        }, completion: { (isFinished) in
+            self.isAnimating = false
+            self.isTriggeredRefreshByUser = false
+            self.refreshStatus = .none
         })
     }
     
@@ -176,8 +167,11 @@ extension MagiRefreshFooterConrol {
                 magiDidScrollWithProgress(progress: 0.5,
                                           max: stretchOffsetYAxisThreshold)
             }
-            scrollView?.insetBottom = presetContentInsets.bottom+magi_height
         }
+        scrollView?.insetBottom = presetContentInsets.bottom+magi_height
+        print("scrollView?.insetBottom  --------- \(scrollView?.insetBottom )")
+        print("presetContentInsets.bottom --------- \(presetContentInsets.bottom)")
+        print("magi_height  --------- \(magi_height)")
     }
     
     fileprivate func setCompletion() {

@@ -48,11 +48,13 @@ class TableViewController: UITableViewController {
         else {
             automaticallyAdjustsScrollViewInsets = false
         }
-        
+        //self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         tableView.magiRefresh.bindStyleForFooterRefresh(
             themeColor: UIColor.cyan,
             refreshStyle: MagiRefreshStyle.native) { [weak self] in
                 self?.tableView.magiRefresh.footer?.endRefreshingWithAlertText("安然", completion: nil)
+                self?.tableView.reloadData()
                 print("bindStyleForFooterRefresh")
         }
         tableView.magiRefresh.bindStyleForHeaderRefresh(
