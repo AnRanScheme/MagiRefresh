@@ -10,7 +10,7 @@ import UIKit
 
 typealias MagiRefreshClosure = ()->()
 let kMagiRefreshHeight: CGFloat = 45.0
-let kMagiStretchOffsetYAxisThreshold: CGFloat = 1.0
+let kMagiStretchOffsetYAxisThreshold: CGFloat = 1
 let kMagiContentOffset = "contentOffset"
 let kMagiContentSize = "contentSize"
 
@@ -19,9 +19,9 @@ class MagiRefreshBaseConrol: UIView {
     /// The UIScrollView to which the control is added, developers may not set
     fileprivate(set) var scrollView: UIScrollView?
     /// Whether it is refreshing
-    var isRefresh: Bool {
+    fileprivate(set) var isRefresh: Bool {
         set {
-            self.isRefresh = newValue
+            
         }
         get {
             return refreshStatus == .refreshing
@@ -31,54 +31,41 @@ class MagiRefreshBaseConrol: UIView {
     var isAnimating: Bool = false
     /// Control refresh status, developers may not set
     var refreshStatus: MagiRefreshStatus = .none {
-        didSet {
+        willSet {
+            if refreshStatus == newValue { return }
+             print("refreshStatus------\(refreshStatus)")
             switch refreshStatus {
             case .none:
-                UIView.animate(withDuration: 0.15,
-                               delay: 0,
-                               options: UIViewAnimationOptions.curveLinear,
-                               animations: {
-                                self.alpha = 0.0
-                },
-                               completion: nil)
+                UIView.setAnimate(animations: {
+                    self.alpha = 0.0
+                }, completion: nil)
             case .scrolling:
                 /// when system adjust contentOffset atuomatically,
                 /// will trigger refresh control's state changed.
                 if !isTriggeredRefreshByUser && !(scrollView?.isTracking ?? false) {
                     return
                 }
-                UIView.animate(withDuration: 0.15,
-                               delay: 0,
-                               options: UIViewAnimationOptions.curveLinear,
-                               animations: {
-                                self.alpha = 1.0
-                },
-                               completion: nil)
+                UIView.setAnimate(animations: {
+                    self.alpha = 1.0
+                }, completion: nil)
             case .ready:
                 /// because of scrollView contentOffset is not continuous change.
                 /// need to manually adjust progress
                 if progress < stretchOffsetYAxisThreshold {
-                    magiDidScrollWithProgress(progress: stretchOffsetYAxisThreshold,
-                                              max: stretchOffsetYAxisThreshold)
+                    magiRefreshControlDidScrollWithProgress(progress: stretchOffsetYAxisThreshold,
+                                                            max: stretchOffsetYAxisThreshold)
                 }
-                UIView.animate(withDuration: 0.15,
-                               delay: 0,
-                               options: UIViewAnimationOptions.curveLinear,
-                               animations: {
-                                self.alpha = 1.0
-                },
-                               completion: nil)
+                UIView.setAnimate(animations: {
+                    self.alpha = 1.0
+                }, completion: nil)
             case .refreshing:
                 break
             case .willEndRefresh:
-                UIView.animate(withDuration: 0.15,
-                               delay: 0,
-                               options: UIViewAnimationOptions.curveLinear,
-                               animations: {
-                                self.alpha = 1.0
-                },
-                               completion: nil)
+                UIView.setAnimate(animations: {
+                    self.alpha = 1.0
+                }, completion: nil)
             }
+            magiRefreshControlStateDidChange(refreshStatus)
         }
     }
     /// When the system automatically or manually adjust contentInset,
@@ -86,27 +73,25 @@ class MagiRefreshBaseConrol: UIView {
     var presetContentInsets: UIEdgeInsets = UIEdgeInsets.zero
     /// This value is set to TRUE if the beginRefresh method is called automatically
     /// developers may not set
-    var isTriggeredRefreshByUser: Bool = true
+    var isTriggeredRefreshByUser: Bool = false
     /// the current position offset of the control as a percentage
     /// of the offset that triggered the refresh
     var progress: CGFloat = 0.0 {
-        didSet {
-           magiDidScrollWithProgress(progress: progress,
-                                     max: kMagiStretchOffsetYAxisThreshold)
+        willSet {
+            if progress == newValue { return }
+            magiRefreshControlDidScrollWithProgress(progress: progress,
+                                                    max: kMagiStretchOffsetYAxisThreshold)
         }
     }
     ///  Closure will be called when refreshing
     var refreshClosure: MagiRefreshClosure?
     /// The threshold for trigger refresh default 1.0 must be set to not less than 1.0,
     /// default value is 1.3, developers can set the value
-    var stretchOffsetYAxisThreshold: CGFloat {
-        set {
-            if self.stretchOffsetYAxisThreshold != newValue && newValue > 1.0 {
-                self.stretchOffsetYAxisThreshold = newValue
+    var stretchOffsetYAxisThreshold: CGFloat = 1.3 {
+        willSet {
+            if !(stretchOffsetYAxisThreshold != newValue && newValue > 1.0) {
+                return
             }
-        }
-        get {
-            return kMagiStretchOffsetYAxisThreshold
         }
     }
     /// fill colors for points, lines, and faces that appear in this control.
@@ -196,6 +181,7 @@ class MagiRefreshBaseConrol: UIView {
                                             forKeyPath: kMagiContentSize,
                                             options: options,
                                             context: nil)
+                    isObservering = true
                 }
             }
         }
@@ -236,7 +222,13 @@ class MagiRefreshBaseConrol: UIView {
     // MARK: - (需要被子类重写) Subclasses override this method
     func setupProperties() {
         backgroundColor = UIColor.clear
+        alpha = 0.0
         addSubview(alertLabel)
+        isAutoRefreshOnFoot = false
+        refreshStatus = .none
+        stretchOffsetYAxisThreshold = kMagiStretchOffsetYAxisThreshold
+        isShouldNoLongerRefresh = false
+        isRefresh = false
         if frame.equalTo(CGRect.zero) {
             frame = CGRect(x: 0, y: 0, width: 1, height: 1)
         }
@@ -247,11 +239,11 @@ class MagiRefreshBaseConrol: UIView {
     }
     // MARK: - (需要被子类重写) Subclasses override this method
     func setScrollViewToRefreshLocation() {
-        
+        isAnimating = true
     }
     // MARK: - (需要被子类重写) Subclasses override this method
     func setScrollViewToOriginalLocation() {
-        isAnimating = true
+        
     }
     
     // MARK: - Public Function
@@ -288,12 +280,13 @@ class MagiRefreshBaseConrol: UIView {
             alertLabel.text = text
             alertLabel.startAnimating()
             
-            let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * 1.5 ))
+            let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * 1.5 )) / Double(NSEC_PER_SEC)
             DispatchQueue.main.asyncAfter(deadline: popTime) {
                 self.alertLabel.stopAnimating()
                 self._endRefresh()
                 completion?()
             }
+            
         }
         else {
             _endRefresh()
@@ -321,9 +314,8 @@ class MagiRefreshBaseConrol: UIView {
         bringSubview(toFront: alertLabel)
         alertLabel.text = text
         if text != "" {
-            let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * 1.5 ))
+            let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * 1.5 )) / Double(NSEC_PER_SEC)
             DispatchQueue.main.asyncAfter(deadline: popTime) {
-                self.alertLabel.stopAnimating()
                 self._endRefresh()
             }
         }
@@ -340,7 +332,7 @@ class MagiRefreshBaseConrol: UIView {
     }
     
     fileprivate func _endRefresh() {
-        magiRefreshStateDidChange(.willEndRefresh)
+        magiRefreshControlStateDidChange(.willEndRefresh)
         refreshStatus = .scrolling
         setScrollViewToOriginalLocation()
     }

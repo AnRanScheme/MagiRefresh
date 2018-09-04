@@ -51,12 +51,15 @@ class TableViewController: UITableViewController {
         
         tableView.magiRefresh.bindStyleForFooterRefresh(
             themeColor: UIColor.cyan,
-            refreshStyle: MagiRefreshStyle.native) {
+            refreshStyle: MagiRefreshStyle.native) { [weak self] in
+                self?.tableView.magiRefresh.footer?.endRefreshingWithAlertText("安然", completion: nil)
                 print("bindStyleForFooterRefresh")
         }
         tableView.magiRefresh.bindStyleForHeaderRefresh(
             themeColor: UIColor.cyan,
-            refreshStyle: MagiRefreshStyle.native) {
+            refreshStyle: MagiRefreshStyle.native) { [weak self] in
+                 self?.tableView.magiRefresh.header?.endRefreshingWithAlertText("安然", completion: nil)
+                self?.tableView.reloadData()
                 print("bindStyleForHeaderRefresh")
         }
         setupCustomPlaceHolderView()

@@ -20,11 +20,6 @@
 import Foundation
 import UIKit
 
-enum MagiRefreshPosition: Int {
-    case header
-    case footer
-}
-
 enum MagiRefreshStatus: Int {
     case none
     case scrolling

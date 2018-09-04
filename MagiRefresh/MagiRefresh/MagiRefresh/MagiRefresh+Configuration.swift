@@ -36,8 +36,8 @@ extension MagiRefresh {
         case .replicatorWoody:
             break
         }
-        self.header?.refreshClosure = completion
-        self.header?.themeColor = themeColor
+        header?.refreshClosure = completion
+        header?.themeColor = themeColor
         if let head = header {
             self.header = head
         }
@@ -69,8 +69,8 @@ extension MagiRefresh {
         case .replicatorWoody:
             break
         }
-        self.footer?.refreshClosure = completion
-        self.footer?.themeColor = themeColor
+        footer?.refreshClosure = completion
+        footer?.themeColor = themeColor
         if let foot = footer {
             self.footer = foot
         }

@@ -83,7 +83,7 @@ class MagiRefreshHeaderConrol: MagiRefreshBaseConrol {
             
             if refreshStatus == .scrolling {
                 let progress: CGFloat = fabs(originY - presetContentInsets.top)/magi_height
-                if progress <= self.stretchOffsetYAxisThreshold {
+                if progress <= stretchOffsetYAxisThreshold {
                     self.progress = progress
                 }
             }
@@ -112,19 +112,20 @@ extension MagiRefreshHeaderConrol {
     
     static func RefreshingPoint(_ conrol :MagiRefreshBaseConrol)->CGPoint {
         let x = conrol.scrollView?.magi_left ?? 0
-        let y = conrol.magi_height+conrol.presetContentInsets.top
+        let y = -(conrol.magi_height+conrol.presetContentInsets.top)
+        
         return CGPoint(x: x, y: y)
     }
     
     static func MaxYForTriggeringRefresh(_ conrol :MagiRefreshBaseConrol)->CGFloat {
-        let y = conrol.presetContentInsets.top+conrol.stretchOffsetYAxisThreshold*conrol.magi_top
+        let y = -conrol.presetContentInsets.top+conrol.stretchOffsetYAxisThreshold*conrol.magi_top
         
         return y
     }
     
     static func MinYForNone(_ conrol :MagiRefreshBaseConrol)->CGFloat {
         
-        return conrol.presetContentInsets.top
+        return -conrol.presetContentInsets.top
     }
     
     fileprivate func setAnimated() {
@@ -151,12 +152,15 @@ extension MagiRefreshHeaderConrol {
             let max = -(presetContentInsets.top-magi_height)
             if (scrollView?.offsetY ?? 0.0) >= min && (scrollView?.offsetY ?? 0.0) <= max {
                 scrollView?.setContentOffset(MagiRefreshHeaderConrol.RefreshingPoint(self),
-                                             animated: true)
-                magiDidScrollWithProgress(progress: 0.5, max: stretchOffsetYAxisThreshold)
+                                             animated: false)
+                magiRefreshControlDidScrollWithProgress(progress: 0.5, max: stretchOffsetYAxisThreshold)
                 scrollView?.insetTop = magi_height + presetContentInsets.top
             }
         }else{
             scrollView?.insetTop = magi_height + presetContentInsets.top
+            print("scrollView?.insetTop------\(scrollView?.insetTop)")
+            print("presetContentInsets.top------\(presetContentInsets.top)")
+            print("magi_height------\(magi_height)")
         }
     }
     
@@ -164,11 +168,10 @@ extension MagiRefreshHeaderConrol {
         if isTriggeredRefreshByUser {
             refreshStatus = .ready
             refreshStatus = .refreshing
-            magiDidScrollWithProgress(progress: 1.0,
+            magiRefreshControlDidScrollWithProgress(progress: 1.0,
                                       max: stretchOffsetYAxisThreshold)
         }
         refreshClosure?()
-
     }
  
 }
