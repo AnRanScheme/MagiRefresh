@@ -10,6 +10,9 @@ import UIKit
 
 class MagiRefresh {
     
+    static let MagiHeaderKeyPath = "MagiHeaderKeyPath"
+    static let MagiFooterKeyPath = "MagiHeaderKeyPath"
+    
     var placeHolder: MagiPlaceHolder? {
         didSet {
             guard let scrollView = self.scrollView else { return }
@@ -33,9 +36,14 @@ class MagiRefresh {
                     view.removeFromSuperview()
                 }
             }
+            scrollView.willChangeValue(
+                forKey: MagiRefresh.MagiHeaderKeyPath)
             if let header = header {
                 scrollView.addSubview(header)
             }
+            scrollView.didChangeValue(
+                forKey: MagiRefresh.MagiHeaderKeyPath)
+            
         }
     }
     
@@ -47,9 +55,13 @@ class MagiRefresh {
                     view.removeFromSuperview()
                 }
             }
-            if let header = header {
-                scrollView.addSubview(header)
+            scrollView.willChangeValue(
+                forKey: MagiRefresh.MagiFooterKeyPath)
+            if let footer = footer {
+                scrollView.addSubview(footer)
             }
+            scrollView.didChangeValue(
+                forKey: MagiRefresh.MagiFooterKeyPath)
         }
     }
     

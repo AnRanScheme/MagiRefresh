@@ -159,19 +159,18 @@ class MagiRefreshBaseConrol: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        magi_height = magi_height < 45.0
+        let height = magi_height < 45.0
             ? kMagiRefreshHeight
             : magi_height
         frame = CGRect(x: 0, y: 0,
                        width: scrollView?.magi_width ?? 0.0,
-                       height: magi_height)
+                       height: height)
         alertLabel.frame = self.bounds
     }
     
     override func willMove(toSuperview newSuperview: UIView?) {
         // super.willMove(toSuperview: newSuperview)
         let options = NSKeyValueObservingOptions.new.union(NSKeyValueObservingOptions.old)
-        
         if let superview = superview,
             newSuperview == nil {
             if isObservering {

@@ -62,8 +62,8 @@ class MagiBasePlaceHolder: UIView {
         self.backgroundColor = UIColor.white
     }
     
+    /// 由子类实现
     func setupSubviews() {
-        print("由子类实现")
     }
     
     override public func layoutSubviews() {

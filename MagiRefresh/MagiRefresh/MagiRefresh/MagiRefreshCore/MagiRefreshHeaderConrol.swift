@@ -11,15 +11,10 @@ import UIKit
 
 class MagiRefreshHeaderConrol: MagiRefreshBaseConrol {
     
-    var RefreshingPoint: CGPoint {
-        set {
-            
-        }
-        get {
-            let x = scrollView?.magi_left ?? 0
-            let y = magi_height+presetContentInsets.top
-            return CGPoint(x: x, y: y)
-        }
+    static func RefreshingPoint(_ conrol :MagiRefreshBaseConrol)->CGPoint {
+        let x = conrol.scrollView?.magi_left ?? 0
+        let y = conrol.magi_height+conrol.presetContentInsets.top
+        return CGPoint(x: x, y: y)
     }
     
     static func MaxYForTriggeringRefresh(_ conrol :MagiRefreshBaseConrol)->CGFloat {
@@ -164,7 +159,8 @@ extension MagiRefreshHeaderConrol {
             let min = -presetContentInsets.top
             let max = -(presetContentInsets.top-magi_height)
             if (scrollView?.offsetY ?? 0.0) >= min && (scrollView?.offsetY ?? 0.0) <= max {
-                scrollView?.setContentOffset(RefreshingPoint, animated: true)
+                scrollView?.setContentOffset(MagiRefreshHeaderConrol.RefreshingPoint(self),
+                                             animated: true)
                 magiDidScrollWithProgress(progress: 0.5, max: stretchOffsetYAxisThreshold)
                 scrollView?.insetTop = magi_height + presetContentInsets.top
             }
@@ -183,7 +179,5 @@ extension MagiRefreshHeaderConrol {
         refreshClosure?()
 
     }
-    
-    
-    
+ 
 }
