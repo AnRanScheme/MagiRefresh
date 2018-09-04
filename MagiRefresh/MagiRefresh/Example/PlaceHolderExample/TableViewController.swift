@@ -48,14 +48,17 @@ class TableViewController: UITableViewController {
         else {
             automaticallyAdjustsScrollViewInsets = false
         }
-        let header = MagiRefreshHeaderConrol()
-        header.themeColor = UIColor.red
-        header.endRefreshingWithAlertText("安然") {
-            print("对对对")
+        
+        tableView.magiRefresh.bindStyleForFooterRefresh(
+            themeColor: UIColor.cyan,
+            refreshStyle: MagiRefreshStyle.native) {
+                print("bindStyleForFooterRefresh")
         }
-        tableView.magiRefresh.header = header
-        let footer = MagiRefreshFooterConrol()
-        tableView.magiRefresh.footer = footer
+        tableView.magiRefresh.bindStyleForHeaderRefresh(
+            themeColor: UIColor.cyan,
+            refreshStyle: MagiRefreshStyle.native) {
+                print("bindStyleForHeaderRefresh")
+        }
         setupCustomPlaceHolderView()
     }
     

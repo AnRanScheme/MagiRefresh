@@ -19,6 +19,9 @@
 		3526B123213CEAFE00A6A244 /* MagiRefreshProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526B122213CEAFE00A6A244 /* MagiRefreshProtocol.swift */; };
 		3526B127213D1CCE00A6A244 /* MagiAlertLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526B126213D1CCE00A6A244 /* MagiAlertLabel.swift */; };
 		3526B12B213E1B4200A6A244 /* MagiRefreshDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526B12A213E1B4200A6A244 /* MagiRefreshDefaults.swift */; };
+		3526B130213E287400A6A244 /* MagiRefresh+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526B12F213E287400A6A244 /* MagiRefresh+Configuration.swift */; };
+		3526B132213E2C0E00A6A244 /* MagiNativeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526B131213E2C0E00A6A244 /* MagiNativeHeader.swift */; };
+		3526B134213E322600A6A244 /* MagiNativeFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526B133213E322600A6A244 /* MagiNativeFooter.swift */; };
 		3593E2472138EB34008240C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3593E2462138EB34008240C5 /* AppDelegate.swift */; };
 		3593E2492138EB34008240C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3593E2482138EB34008240C5 /* ViewController.swift */; };
 		3593E24C2138EB34008240C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3593E24A2138EB34008240C5 /* Main.storyboard */; };
@@ -68,6 +71,9 @@
 		3526B122213CEAFE00A6A244 /* MagiRefreshProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiRefreshProtocol.swift; sourceTree = "<group>"; };
 		3526B126213D1CCE00A6A244 /* MagiAlertLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiAlertLabel.swift; sourceTree = "<group>"; };
 		3526B12A213E1B4200A6A244 /* MagiRefreshDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiRefreshDefaults.swift; sourceTree = "<group>"; };
+		3526B12F213E287400A6A244 /* MagiRefresh+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagiRefresh+Configuration.swift"; sourceTree = "<group>"; };
+		3526B131213E2C0E00A6A244 /* MagiNativeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiNativeHeader.swift; sourceTree = "<group>"; };
+		3526B133213E322600A6A244 /* MagiNativeFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiNativeFooter.swift; sourceTree = "<group>"; };
 		3593E2432138EB34008240C5 /* MagiRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagiRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3593E2462138EB34008240C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3593E2482138EB34008240C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +192,31 @@
 			path = Default;
 			sourceTree = "<group>";
 		};
+		3526B12C213E27D600A6A244 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3526B12E213E27F500A6A244 /* Header */,
+				3526B12D213E27EA00A6A244 /* Footer */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3526B12D213E27EA00A6A244 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				3526B133213E322600A6A244 /* MagiNativeFooter.swift */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
+		3526B12E213E27F500A6A244 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				3526B131213E2C0E00A6A244 /* MagiNativeHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		3593E23A2138EB34008240C5 = {
 			isa = PBXGroup;
 			children = (
@@ -240,11 +271,13 @@
 		3593E2742138EB49008240C5 /* MagiRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				3526B129213E1B2B00A6A244 /* Default */,
-				3526B128213E1B1B00A6A244 /* Resource */,
 				3593E27B2138EB8F008240C5 /* MagiRefresh.swift */,
+				3526B12F213E287400A6A244 /* MagiRefresh+Configuration.swift */,
 				3593E2772138EB8F008240C5 /* MagiProtocol.swift */,
 				3593E27A2138EB8F008240C5 /* MagiRunTime.swift */,
+				3526B12C213E27D600A6A244 /* UI */,
+				3526B129213E1B2B00A6A244 /* Default */,
+				3526B128213E1B1B00A6A244 /* Resource */,
 				3526B11B213CE90900A6A244 /* MagiRefreshCore */,
 				3526B124213CEB7900A6A244 /* PLaceHolder */,
 				3526B125213CEB9B00A6A244 /* Extension */,
@@ -437,6 +470,7 @@
 				3526B127213D1CCE00A6A244 /* MagiAlertLabel.swift in Sources */,
 				3593E2882138EB8F008240C5 /* CALayer+MagiRefresh.swift in Sources */,
 				3593E2852138EB8F008240C5 /* MagiRefresh.swift in Sources */,
+				3526B130213E287400A6A244 /* MagiRefresh+Configuration.swift in Sources */,
 				3593E2492138EB34008240C5 /* ViewController.swift in Sources */,
 				3526B11A213CDD8F00A6A244 /* MyEmptyView.swift in Sources */,
 				3593E2812138EB8F008240C5 /* MagiProtocol.swift in Sources */,
@@ -445,8 +479,10 @@
 				3593E2832138EB8F008240C5 /* MagiBasePlaceHolder.swift in Sources */,
 				3526B116213CDC4700A6A244 /* PlaceHolderViewController.swift in Sources */,
 				3593E2822138EB8F008240C5 /* UIView+MagiRefresh.swift in Sources */,
+				3526B134213E322600A6A244 /* MagiNativeFooter.swift in Sources */,
 				3526B11F213CEAD600A6A244 /* MagiRefreshHeaderConrol.swift in Sources */,
 				3526B12B213E1B4200A6A244 /* MagiRefreshDefaults.swift in Sources */,
+				3526B132213E2C0E00A6A244 /* MagiNativeHeader.swift in Sources */,
 				3526B121213CEAEC00A6A244 /* MagiRefreshFooterConrol.swift in Sources */,
 				3526B114213CDB9300A6A244 /* WebViewController.swift in Sources */,
 				3593E2472138EB34008240C5 /* AppDelegate.swift in Sources */,

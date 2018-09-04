@@ -141,5 +141,14 @@ extension UIView {
         }
     }
     
+    class func setAnimate(animations: @escaping (()->Void),
+                          completion: ((Bool)->Void)? = nil) {
+        UIView.animate(withDuration: 0.15,
+                       delay: 0,
+                       options: .curveLinear,
+                       animations: animations,
+                       completion: completion)
+    }
+    
     
 }

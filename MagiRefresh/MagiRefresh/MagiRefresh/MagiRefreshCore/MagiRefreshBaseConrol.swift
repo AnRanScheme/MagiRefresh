@@ -224,9 +224,7 @@ class MagiRefreshBaseConrol: UIView {
             break
         }
     }
-    
-    
-    
+
     // MARK: - Function
     
     ///  Set the color of the prompt text after the refresh is completed.
@@ -346,12 +344,6 @@ class MagiRefreshBaseConrol: UIView {
         refreshStatus = .scrolling
         setScrollViewToOriginalLocation()
     }
-
-  
-}
-
-// MARK: - MagiRefreshControlProtocol
-extension MagiRefreshBaseConrol: MagiRefreshControlProtocol {
     
     func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
         
@@ -361,4 +353,18 @@ extension MagiRefreshBaseConrol: MagiRefreshControlProtocol {
         
     }
 
+  
+}
+
+// MARK: - MagiRefreshControlProtocol
+extension MagiRefreshBaseConrol: MagiRefreshControlProtocol {
+    
+    func magiRefreshControlStateDidChange(_ status: MagiRefreshStatus) {
+        magiRefreshStateDidChange(status)
+    }
+    
+    func magiRefreshControlDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
+        magiDidScrollWithProgress(progress: progress, max: max)
+    }
+    
 }

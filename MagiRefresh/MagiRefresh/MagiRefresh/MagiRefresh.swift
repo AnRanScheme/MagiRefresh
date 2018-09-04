@@ -29,39 +29,34 @@ class MagiRefresh {
     }
     
     var header: MagiRefreshHeaderConrol? {
-        didSet {
-            guard let scrollView = self.scrollView else { return }
-            scrollView.subviews.forEach { (view) in
-                if view.isKind(of: MagiRefreshHeaderConrol.self) {
-                    view.removeFromSuperview()
+        willSet{
+            if header != newValue {
+                guard let scrollView = self.scrollView else { return }
+                header?.removeFromSuperview()
+                scrollView.willChangeValue(
+                    forKey: MagiRefresh.MagiHeaderKeyPath)
+                if let newValue = newValue {
+                    scrollView.addSubview(newValue)
                 }
+                scrollView.didChangeValue(
+                    forKey: MagiRefresh.MagiHeaderKeyPath)
             }
-            scrollView.willChangeValue(
-                forKey: MagiRefresh.MagiHeaderKeyPath)
-            if let header = header {
-                scrollView.addSubview(header)
-            }
-            scrollView.didChangeValue(
-                forKey: MagiRefresh.MagiHeaderKeyPath)
-            
         }
     }
     
     var footer: MagiRefreshFooterConrol? {
-        didSet {
-            guard let scrollView = self.scrollView else { return }
-            scrollView.subviews.forEach { (view) in
-                if view.isKind(of: MagiRefreshFooterConrol.self) {
-                    view.removeFromSuperview()
+        willSet{
+            if footer != newValue {
+                guard let scrollView = self.scrollView else { return }
+                footer?.removeFromSuperview()
+                scrollView.willChangeValue(
+                    forKey: MagiRefresh.MagiFooterKeyPath)
+                if let newValue = newValue {
+                    scrollView.addSubview(newValue)
                 }
+                scrollView.didChangeValue(
+                    forKey: MagiRefresh.MagiFooterKeyPath)
             }
-            scrollView.willChangeValue(
-                forKey: MagiRefresh.MagiFooterKeyPath)
-            if let footer = footer {
-                scrollView.addSubview(footer)
-            }
-            scrollView.didChangeValue(
-                forKey: MagiRefresh.MagiFooterKeyPath)
         }
     }
     
@@ -138,3 +133,4 @@ class MagiRefresh {
     }
     
 }
+

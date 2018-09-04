@@ -10,24 +10,7 @@
 import UIKit
 
 class MagiRefreshHeaderConrol: MagiRefreshBaseConrol {
-    
-    static func RefreshingPoint(_ conrol :MagiRefreshBaseConrol)->CGPoint {
-        let x = conrol.scrollView?.magi_left ?? 0
-        let y = conrol.magi_height+conrol.presetContentInsets.top
-        return CGPoint(x: x, y: y)
-    }
-    
-    static func MaxYForTriggeringRefresh(_ conrol :MagiRefreshBaseConrol)->CGFloat {
-        let y = conrol.presetContentInsets.top+conrol.stretchOffsetYAxisThreshold*conrol.magi_top
-        
-        return y
-    }
-    
-    static func MinYForNone(_ conrol :MagiRefreshBaseConrol)->CGFloat {
-        
-        return conrol.presetContentInsets.top
-    }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -47,33 +30,24 @@ class MagiRefreshHeaderConrol: MagiRefreshBaseConrol {
             if let realContentInset = self.scrollView?.realContentInset {
                 self.presetContentInsets = realContentInset
             }
-            
-            UIView.animate(withDuration: 0.15,
-                           delay: 0,
-                           options: UIViewAnimationOptions.curveLinear,
-                           animations: {
-                            self.setAnimated()
-            },
-                           completion: { (isFinished) in
-                            self.setCompletion()
-            })
+            UIView.setAnimate(animations: {
+               self.setAnimated()
+            }) { (isFinished) in
+              self.setCompletion()
+            }
         }
     }
     
     override func setScrollViewToOriginalLocation() {
         super.setScrollViewToOriginalLocation()
-        UIView.animate(withDuration: 0.15,
-                       delay: 0,
-                       options: UIViewAnimationOptions.curveLinear,
-                       animations: {
-                        self.isAnimating = true
-                        self.scrollView?.insetTop = self.presetContentInsets.top;
-        },
-                       completion: { (isFinished) in
-                        self.isAnimating = false
-                        self.isTriggeredRefreshByUser = false
-                        self.refreshStatus = .none
-        })
+        UIView.setAnimate(animations: {
+            self.isAnimating = true
+            self.scrollView?.insetTop = self.presetContentInsets.top
+        }) { (isFinished) in
+            self.isAnimating = false
+            self.isTriggeredRefreshByUser = false
+            self.refreshStatus = .none
+        }
     }
     
     override func privateContentOffsetOfScrollViewDidChange(_ contentOffset: CGPoint) {
@@ -135,6 +109,23 @@ class MagiRefreshHeaderConrol: MagiRefreshBaseConrol {
 }
 
 extension MagiRefreshHeaderConrol {
+    
+    static func RefreshingPoint(_ conrol :MagiRefreshBaseConrol)->CGPoint {
+        let x = conrol.scrollView?.magi_left ?? 0
+        let y = conrol.magi_height+conrol.presetContentInsets.top
+        return CGPoint(x: x, y: y)
+    }
+    
+    static func MaxYForTriggeringRefresh(_ conrol :MagiRefreshBaseConrol)->CGFloat {
+        let y = conrol.presetContentInsets.top+conrol.stretchOffsetYAxisThreshold*conrol.magi_top
+        
+        return y
+    }
+    
+    static func MinYForNone(_ conrol :MagiRefreshBaseConrol)->CGFloat {
+        
+        return conrol.presetContentInsets.top
+    }
     
     fileprivate func setAnimated() {
         if isTriggeredRefreshByUser {

@@ -39,12 +39,12 @@ protocol MagiRefreshControlProtocol: class {
     /// when the state of the refresh control changes, the method is called
     ///
     /// - Parameter status: MagiRefreshStatus(状态)
-    func magiRefreshStateDidChange(_ status: MagiRefreshStatus)
+    func magiRefreshControlStateDidChange(_ status: MagiRefreshStatus)
     
     /// when the state of the refresh control changes, the method is called
     ///
     /// - Parameters:
     ///   - progress: the current position offset of the control as a percentage of the offset that triggered the refresh
     ///   - max: the offset that triggered the refresh
-    func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat)
+    func magiRefreshControlDidScrollWithProgress(progress: CGFloat, max: CGFloat)
 }
