@@ -20,7 +20,7 @@ extension MagiRefresh {
         case .native:
             header = MagiNativeHeader()
         case .animatableArrow:
-            break
+            header = MagiArrowHeader()
         case .animatableRing:
             break
         case .replicatorAllen:

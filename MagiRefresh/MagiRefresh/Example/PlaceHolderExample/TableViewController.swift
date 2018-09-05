@@ -59,7 +59,7 @@ class TableViewController: UITableViewController {
         }
         tableView.magiRefresh.bindStyleForHeaderRefresh(
             themeColor: UIColor.cyan,
-            refreshStyle: MagiRefreshStyle.native) { [weak self] in
+            refreshStyle: MagiRefreshStyle.animatableArrow) { [weak self] in
                  self?.tableView.magiRefresh.header?.endRefreshingWithAlertText("安然", completion: nil)
                 self?.tableView.reloadData()
                 print("bindStyleForHeaderRefresh")

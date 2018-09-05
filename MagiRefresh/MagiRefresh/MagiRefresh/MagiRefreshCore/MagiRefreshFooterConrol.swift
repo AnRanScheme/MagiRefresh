@@ -163,7 +163,7 @@ extension MagiRefreshFooterConrol {
             if (scrollView?.contentHeight ?? 0.0) > (scrollView?.magi_height ?? 0.0) &&
                 (scrollView?.offsetY ?? 0.0) >= MagiRefreshFooterConrol.OffsetOfTriggeringFootRefreshControlToRefresh(self) {
                 scrollView?.setContentOffset(MagiRefreshFooterConrol.RefreshingPoint(self),
-                                             animated: false)
+                                             animated: true)
                 magiDidScrollWithProgress(progress: 0.5,
                                           max: stretchOffsetYAxisThreshold)
             }

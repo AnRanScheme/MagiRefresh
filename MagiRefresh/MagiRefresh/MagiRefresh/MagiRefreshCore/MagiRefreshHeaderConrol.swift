@@ -152,7 +152,7 @@ extension MagiRefreshHeaderConrol {
             let max = -(presetContentInsets.top-magi_height)
             if (scrollView?.offsetY ?? 0.0) >= min && (scrollView?.offsetY ?? 0.0) <= max {
                 scrollView?.setContentOffset(MagiRefreshHeaderConrol.RefreshingPoint(self),
-                                             animated: false)
+                                             animated: true)
                 magiRefreshControlDidScrollWithProgress(progress: 0.5, max: stretchOffsetYAxisThreshold)
                 scrollView?.insetTop = magi_height + presetContentInsets.top
             }

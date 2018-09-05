@@ -22,6 +22,8 @@
 		3526B130213E287400A6A244 /* MagiRefresh+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526B12F213E287400A6A244 /* MagiRefresh+Configuration.swift */; };
 		3526B132213E2C0E00A6A244 /* MagiNativeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526B131213E2C0E00A6A244 /* MagiNativeHeader.swift */; };
 		3526B134213E322600A6A244 /* MagiNativeFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526B133213E322600A6A244 /* MagiNativeFooter.swift */; };
+		3526B136213F6C8900A6A244 /* MagiArrowHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3526B135213F6C8900A6A244 /* MagiArrowHeader.swift */; };
+		3526B138213F71BA00A6A244 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3526B137213F71B900A6A244 /* Image.bundle */; };
 		3593E2472138EB34008240C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3593E2462138EB34008240C5 /* AppDelegate.swift */; };
 		3593E2492138EB34008240C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3593E2482138EB34008240C5 /* ViewController.swift */; };
 		3593E24C2138EB34008240C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3593E24A2138EB34008240C5 /* Main.storyboard */; };
@@ -74,6 +76,8 @@
 		3526B12F213E287400A6A244 /* MagiRefresh+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagiRefresh+Configuration.swift"; sourceTree = "<group>"; };
 		3526B131213E2C0E00A6A244 /* MagiNativeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiNativeHeader.swift; sourceTree = "<group>"; };
 		3526B133213E322600A6A244 /* MagiNativeFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiNativeFooter.swift; sourceTree = "<group>"; };
+		3526B135213F6C8900A6A244 /* MagiArrowHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiArrowHeader.swift; sourceTree = "<group>"; };
+		3526B137213F71B900A6A244 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
 		3593E2432138EB34008240C5 /* MagiRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagiRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3593E2462138EB34008240C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3593E2482138EB34008240C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 		3526B128213E1B1B00A6A244 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3526B137213F71B900A6A244 /* Image.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				3526B131213E2C0E00A6A244 /* MagiNativeHeader.swift */,
+				3526B135213F6C8900A6A244 /* MagiArrowHeader.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 			files = (
 				3526B119213CDD8F00A6A244 /* MyEmptyView.xib in Resources */,
 				3593E2512138EB34008240C5 /* LaunchScreen.storyboard in Resources */,
+				3526B138213F71BA00A6A244 /* Image.bundle in Resources */,
 				3593E24E2138EB34008240C5 /* Assets.xcassets in Resources */,
 				3593E24C2138EB34008240C5 /* Main.storyboard in Resources */,
 			);
@@ -467,6 +474,7 @@
 				3593E2862138EB8F008240C5 /* MagiPlaceHolder.swift in Sources */,
 				3526B11D213CE97000A6A244 /* MagiRefreshBaseConrol.swift in Sources */,
 				3526B123213CEAFE00A6A244 /* MagiRefreshProtocol.swift in Sources */,
+				3526B136213F6C8900A6A244 /* MagiArrowHeader.swift in Sources */,
 				3526B127213D1CCE00A6A244 /* MagiAlertLabel.swift in Sources */,
 				3593E2882138EB8F008240C5 /* CALayer+MagiRefresh.swift in Sources */,
 				3593E2852138EB8F008240C5 /* MagiRefresh.swift in Sources */,
