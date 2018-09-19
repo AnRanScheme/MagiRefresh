@@ -31,6 +31,6 @@ class MagiRefreshDefaults {
     var readyText: String = "松开刷新"
     var refreshingText: String = "正在加载"
     
-    static let shard = MagiRefreshDefaults()
+    static let shared = MagiRefreshDefaults()
     
 }

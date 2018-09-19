@@ -44,6 +44,9 @@
 		3593E2882138EB8F008240C5 /* CALayer+MagiRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3593E27E2138EB8F008240C5 /* CALayer+MagiRefresh.swift */; };
 		3593E2892138EB8F008240C5 /* UIScrollView+MagiRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3593E27F2138EB8F008240C5 /* UIScrollView+MagiRefresh.swift */; };
 		3593E28A2138EB8F008240C5 /* UICollectionView+MagiRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3593E2802138EB8F008240C5 /* UICollectionView+MagiRefresh.swift */; };
+		35F8FA402151EA11009143F7 /* MagiAnimatableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8FA3F2151EA11009143F7 /* MagiAnimatableProtocol.swift */; };
+		35F8FA422151EA6C009143F7 /* MagiArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8FA412151EA6C009143F7 /* MagiArcLayer.swift */; };
+		35F8FA442151EE83009143F7 /* MagiReplicatorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8FA432151EE83009143F7 /* MagiReplicatorLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,9 @@
 		3593E27E2138EB8F008240C5 /* CALayer+MagiRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+MagiRefresh.swift"; sourceTree = "<group>"; };
 		3593E27F2138EB8F008240C5 /* UIScrollView+MagiRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MagiRefresh.swift"; sourceTree = "<group>"; };
 		3593E2802138EB8F008240C5 /* UICollectionView+MagiRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+MagiRefresh.swift"; sourceTree = "<group>"; };
+		35F8FA3F2151EA11009143F7 /* MagiAnimatableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiAnimatableProtocol.swift; sourceTree = "<group>"; };
+		35F8FA412151EA6C009143F7 /* MagiArcLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiArcLayer.swift; sourceTree = "<group>"; };
+		35F8FA432151EE83009143F7 /* MagiReplicatorLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiReplicatorLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +297,7 @@
 				3593E2772138EB8F008240C5 /* MagiProtocol.swift */,
 				3593E27A2138EB8F008240C5 /* MagiRunTime.swift */,
 				3526B12C213E27D600A6A244 /* UI */,
+				35F8FA3E2151E931009143F7 /* Layer */,
 				3526B129213E1B2B00A6A244 /* Default */,
 				3526B128213E1B1B00A6A244 /* Resource */,
 				3526B11B213CE90900A6A244 /* MagiRefreshCore */,
@@ -341,6 +348,16 @@
 				3593E2482138EB34008240C5 /* ViewController.swift */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		35F8FA3E2151E931009143F7 /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				35F8FA3F2151EA11009143F7 /* MagiAnimatableProtocol.swift */,
+				35F8FA412151EA6C009143F7 /* MagiArcLayer.swift */,
+				35F8FA432151EE83009143F7 /* MagiReplicatorLayer.swift */,
+			);
+			path = Layer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,13 +515,16 @@
 				3526B116213CDC4700A6A244 /* PlaceHolderViewController.swift in Sources */,
 				3593E2822138EB8F008240C5 /* UIView+MagiRefresh.swift in Sources */,
 				3526B134213E322600A6A244 /* MagiNativeFooter.swift in Sources */,
+				35F8FA442151EE83009143F7 /* MagiReplicatorLayer.swift in Sources */,
 				3526B11F213CEAD600A6A244 /* MagiRefreshHeaderConrol.swift in Sources */,
 				3526B12B213E1B4200A6A244 /* MagiRefreshDefaults.swift in Sources */,
 				3526B132213E2C0E00A6A244 /* MagiNativeHeader.swift in Sources */,
+				35F8FA402151EA11009143F7 /* MagiAnimatableProtocol.swift in Sources */,
 				3526B13C213FA06500A6A244 /* MagiArrowFooter.swift in Sources */,
 				352D5426214F408400CBB77C /* RefreshViewController.swift in Sources */,
 				3526B121213CEAEC00A6A244 /* MagiRefreshFooterConrol.swift in Sources */,
 				3526B114213CDB9300A6A244 /* WebViewController.swift in Sources */,
+				35F8FA422151EA6C009143F7 /* MagiArcLayer.swift in Sources */,
 				3593E2472138EB34008240C5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

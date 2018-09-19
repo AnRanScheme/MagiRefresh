@@ -12,8 +12,8 @@ import UIKit
 // MARK: - MagiRefresh+Configuration
 extension MagiRefresh {
     
-    func bindStyleForHeaderRefresh(themeColor: UIColor = MagiRefreshDefaults.shard.themeColor,
-                                   refreshStyle: MagiRefreshStyle = MagiRefreshDefaults.shard.headerDefaultStyle,
+    func bindStyleForHeaderRefresh(themeColor: UIColor = MagiRefreshDefaults.shared.themeColor,
+                                   refreshStyle: MagiRefreshStyle = MagiRefreshDefaults.shared.headerDefaultStyle,
                                    completion: @escaping MagiRefreshClosure) {
         var header: MagiRefreshHeaderConrol?
         switch refreshStyle {
@@ -44,8 +44,8 @@ extension MagiRefresh {
         
     }
     
-    func bindStyleForFooterRefresh(themeColor: UIColor = MagiRefreshDefaults.shard.themeColor,
-                                   refreshStyle: MagiRefreshStyle = MagiRefreshDefaults.shard.footerDefaultStyle,
+    func bindStyleForFooterRefresh(themeColor: UIColor = MagiRefreshDefaults.shared.themeColor,
+                                   refreshStyle: MagiRefreshStyle = MagiRefreshDefaults.shared.footerDefaultStyle,
                                    completion: @escaping MagiRefreshClosure) {
 
         var footer: MagiRefreshFooterConrol?
