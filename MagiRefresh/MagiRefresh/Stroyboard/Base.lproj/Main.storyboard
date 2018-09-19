@@ -35,6 +35,9 @@
                                     <constraint firstAttribute="height" constant="50" id="qDv-5L-m5L"/>
                                 </constraints>
                                 <state key="normal" title="下拉刷新的样式"/>
+                                <connections>
+                                    <action selector="refreshViewAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tzz-vV-jXU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

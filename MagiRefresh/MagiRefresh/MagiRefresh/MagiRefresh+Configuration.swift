@@ -53,7 +53,7 @@ extension MagiRefresh {
         case .native:
             footer = MagiNativeFooter()
         case .animatableArrow:
-            break
+            footer = MagiArrowFooter()
         case .animatableRing:
             break
         case .replicatorAllen:

@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func refreshViewAction(_ sender: UIButton) {
+        let vc = RefreshMainListViewController()
+        navigationController?.pushViewController(vc,
+                                                 animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

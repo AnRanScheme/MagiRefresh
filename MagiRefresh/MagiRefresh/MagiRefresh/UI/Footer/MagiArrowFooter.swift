@@ -1,16 +1,18 @@
 //
-//  MagiArrowHeader.swift
+//  MagiArrowFooter.swift
 //  MagiRefresh
 //
 //  Created by anran on 2018/9/5.
 //  Copyright © 2018年 anran. All rights reserved.
 //
 
+import Foundation
+
 import UIKit
 
-class MagiArrowHeader: MagiRefreshHeaderConrol {
+class MagiArrowFooter: MagiRefreshFooterConrol {
     
-    var pullingText: String = MagiRefreshDefaults.shard.headPullingText
+    var pullingText: String = MagiRefreshDefaults.shard.footPullingText
     var readyText: String = MagiRefreshDefaults.shard.readyText
     var refreshingText: String = MagiRefreshDefaults.shard.refreshingText
     
@@ -21,8 +23,7 @@ class MagiArrowHeader: MagiRefreshHeaderConrol {
         let image = UIImage(contentsOfFile: urlString)
         arrowImgV.image = image
         arrowImgV.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        
-        
+
         return arrowImgV
     }()
     
@@ -39,7 +40,7 @@ class MagiArrowHeader: MagiRefreshHeaderConrol {
         else {
             promptlabel.font = UIFont.systemFont(ofSize: 11)
         }
-
+        
         return promptlabel
     }()
     
@@ -81,7 +82,7 @@ class MagiArrowHeader: MagiRefreshHeaderConrol {
         switch status {
         case .none:
             arrowImgV.isHidden = false
-             indicator.stopAnimating()
+            indicator.stopAnimating()
             UIView.animate(withDuration: 0.3) {
                 self.arrowImgV.transform = CGAffineTransform.identity
             }
@@ -105,6 +106,7 @@ class MagiArrowHeader: MagiRefreshHeaderConrol {
             indicator.stopAnimating()
         }
     }
-     
+    
 }
+
 

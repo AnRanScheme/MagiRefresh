@@ -347,7 +347,6 @@ extension MagiPlaceHolder {
         titleLabel.text = self.title
         contentWidth = (Float(width) > Float(contentWidth)) ? width : contentWidth
         contentHeight = titleLabel.magi_maxY
-        
     }
     
     // DetailLabel
