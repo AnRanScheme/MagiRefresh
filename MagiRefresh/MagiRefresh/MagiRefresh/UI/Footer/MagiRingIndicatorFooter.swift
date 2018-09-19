@@ -1,5 +1,5 @@
 //
-//  MagiRingIndicatorHeader.swift
+//  MagiRingIndicatorFooter.swift
 //  MagiRefresh
 //
 //  Created by anran on 2018/9/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MagiRingIndicatorHeader: MagiRefreshHeaderConrol {
+class MagiRingIndicatorFooter: MagiRefreshFooterConrol {
 
     fileprivate lazy var indicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(
@@ -42,8 +42,8 @@ class MagiRingIndicatorHeader: MagiRefreshHeaderConrol {
     
     override func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
         var progress1 = progress
-        if (progress1 >= 0.7) {
-            progress1 = (progress1-0.7)/(max - 0.7)
+        if (progress1 >= 0.3) {
+            progress1 = (progress1-0.3)/(max - 0.3)
         }
         arcLayer.setProgress(progress1)
     }
@@ -52,11 +52,11 @@ class MagiRingIndicatorHeader: MagiRefreshHeaderConrol {
         super.magiRefreshStateDidChange(status)
         switch status {
         case .none:
-            arcLayer.setProgress(0.0)
-        case .scrolling:
-            fallthrough
-        case .ready:
             break
+        case .scrolling:
+            break
+        case .ready:
+            arcLayer.opacity = 1.0
         case .refreshing:
             arcLayer.startAnimating()
             arcLayer.isHidden = true

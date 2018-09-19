@@ -56,23 +56,28 @@ extension MagiRefresh {
         switch refreshStyle {
         case .native:
             footer = MagiNativeFooter()
+        case .replicatorWoody:
+            fallthrough
+        case .replicatorAllen:
+            fallthrough
+        case .replicatorCircle:
+            fallthrough
+        case .replicatorDot:
+            fallthrough
+        case .replicatorArc:
+            fallthrough
+        case .replicatorTriangle:
+            footer = MagiReplicatorFooter()
+            if let foot = footer as? MagiReplicatorFooter {
+                foot.animationStyle = MagiReplicatorLayerAnimationStyle(
+                    rawValue: refreshStyle.rawValue - 1) ?? .woody
+            }
+        case .animatableRing:
+            footer = MagiRingIndicatorFooter()
         case .animatableArrow:
             footer = MagiArrowFooter()
-        case .animatableRing:
-            break
-        case .replicatorAllen:
-            break
-        case .replicatorArc:
-            break
-        case .replicatorCircle:
-            break
-        case .replicatorDot:
-            break
-        case .replicatorTriangle:
-            break
-        case .replicatorWoody:
-            break
         }
+
         footer?.refreshClosure = completion
         footer?.themeColor = themeColor
         if let foot = footer {

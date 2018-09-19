@@ -1,5 +1,5 @@
 //
-//  MagiReplicatorHeader.swift
+//  MagiReplicatorFooter.swift
 //  MagiRefresh
 //
 //  Created by anran on 2018/9/19.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MagiReplicatorHeader: MagiRefreshHeaderConrol {
-    
+class MagiReplicatorFooter: MagiRefreshFooterConrol {
+
     fileprivate lazy var replicatorLayer: MagiReplicatorLayer = {
         let replicatorLayer = MagiReplicatorLayer()
-
+        
         return replicatorLayer
     }()
     
@@ -21,7 +21,7 @@ class MagiReplicatorHeader: MagiRefreshHeaderConrol {
             replicatorLayer.animationStyle = animationStyle
         }
     }
-
+    
     override var themeColor: UIColor {
         didSet{
             replicatorLayer.themeColor = themeColor
@@ -43,19 +43,18 @@ class MagiReplicatorHeader: MagiRefreshHeaderConrol {
     
     override func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
         var progress1 = progress
-        if (progress1 >= 0.7) {
-            
+        if (progress1 >= 0.8) {
             progress1 = (progress1-0.7)/(max - 0.7)
         }
         switch animationStyle {
         case .woody:
-            fallthrough
+            break
         case .allen:
-            fallthrough
+            break
         case .circle:
-            fallthrough
+            break
         case .dot:
-            fallthrough
+            break
         case .arc:
             replicatorLayer.indicatorShapeLayer.strokeEnd = progress1
         case .triangle:
@@ -78,5 +77,5 @@ class MagiReplicatorHeader: MagiRefreshHeaderConrol {
             replicatorLayer.stopAnimating()
         }
     }
-    
+
 }

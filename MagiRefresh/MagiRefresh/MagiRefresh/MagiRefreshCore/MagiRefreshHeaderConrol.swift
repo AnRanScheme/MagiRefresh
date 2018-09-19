@@ -112,7 +112,7 @@ extension MagiRefreshHeaderConrol {
     
     static func RefreshingPoint(_ conrol :MagiRefreshBaseConrol)->CGPoint {
         let x = conrol.scrollView?.magi_left ?? 0
-        let y = -(conrol.magi_height+conrol.presetContentInsets.top)
+        let y = -conrol.presetContentInsets.top-conrol.magi_height
         
         return CGPoint(x: x, y: y)
     }
@@ -152,7 +152,7 @@ extension MagiRefreshHeaderConrol {
             let max = -(presetContentInsets.top-magi_height)
             if (scrollView?.offsetY ?? 0.0) >= min && (scrollView?.offsetY ?? 0.0) <= max {
                 scrollView?.setContentOffset(MagiRefreshHeaderConrol.RefreshingPoint(self),
-                                             animated: true)
+                                             animated: false)
                 magiRefreshControlDidScrollWithProgress(progress: 0.5, max: stretchOffsetYAxisThreshold)
                 scrollView?.insetTop = magi_height + presetContentInsets.top
             }
