@@ -41,7 +41,7 @@ extension CALayer {
         }
         set {
             var frame = self.frame
-            frame.origin.x = magi_right - frame.size.width
+            frame.origin.x = newValue - frame.size.width
             self.frame = frame
         }
     }
@@ -53,7 +53,7 @@ extension CALayer {
         }
         set {
             var frame = self.frame
-            frame.origin.y = magi_bottom - frame.origin.y
+            frame.origin.y = newValue - frame.origin.y
             self.frame = frame
         }
     }
@@ -65,7 +65,7 @@ extension CALayer {
         }
         set {
             var frame = self.frame
-            frame.size.width = magi_width
+            frame.size.width = newValue
             self.frame = frame
         }
     }
@@ -77,7 +77,7 @@ extension CALayer {
         }
         set {
             var frame = self.frame
-            frame.size.height = magi_height
+            frame.size.height = newValue
             self.frame = frame
         }
     }
@@ -88,7 +88,7 @@ extension CALayer {
             return self.position.x
         }
         set {
-            self.position = CGPoint(x: magi_positionX, y: self.position.y)
+            self.position = CGPoint(x: newValue, y: self.position.y)
         }
     }
 
@@ -98,7 +98,7 @@ extension CALayer {
             return self.position.y
         }
         set {
-            self.position = CGPoint(x: self.position.x, y: magi_positionY)
+            self.position = CGPoint(x: self.position.x, y: newValue)
         }
     }
 
@@ -109,7 +109,7 @@ extension CALayer {
         }
         set {
             var frame = self.frame
-            frame.origin = magi_origin
+            frame.origin = newValue
             self.frame = frame
         }
     }
@@ -121,7 +121,7 @@ extension CALayer {
         }
         set {
             var frame = self.frame
-            frame.size = magi_size
+            frame.size = newValue
             self.frame = frame
         }
     }

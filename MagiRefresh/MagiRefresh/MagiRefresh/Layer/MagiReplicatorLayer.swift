@@ -44,7 +44,8 @@ class MagiReplicatorLayer: CALayer {
             }
             else {
                 let objc = CAShapeLayer()
-                objc.backgroundColor = indicatorShapeLayer.backgroundColor
+                objc.strokeColor = themeColor.cgColor
+                objc.backgroundColor = themeColor.cgColor
                 objc_setAssociatedObject(
                     self,
                     RuntimeKey.leftDot!,
@@ -72,7 +73,8 @@ class MagiReplicatorLayer: CALayer {
             }
             else {
                 let objc = CAShapeLayer()
-                objc.backgroundColor = indicatorShapeLayer.backgroundColor
+                objc.strokeColor = themeColor.cgColor
+                objc.backgroundColor = themeColor.cgColor
                 objc_setAssociatedObject(
                     self,
                     RuntimeKey.rightDot!,
@@ -206,7 +208,7 @@ class MagiReplicatorLayer: CALayer {
             indicatorShapeLayer.path = arcPath.cgPath
             indicatorShapeLayer.strokeEnd = 0.1
             replicatorLayer.instanceCount = 2
-            replicatorLayer.instanceTransform = CATransform3DMakeRotation(CGFloat.pi*2, 0, 0, 0.1)
+            replicatorLayer.instanceTransform = CATransform3DMakeRotation(CGFloat.pi, 0, 0, 0.1)
         case .triangle:
             indicatorShapeLayer.frame = CGRect(x: replicatorLayer.magi_width/2.0, y:5.0, width: 8.0, height: 8.0)
             indicatorShapeLayer.cornerRadius = indicatorShapeLayer.magi_width/2.0
@@ -364,12 +366,12 @@ extension MagiReplicatorLayer: MagiAnimatableProtocol {
             let key1 = keyFrameAnimation(with: trianglePath(with: leftPoint, vertexs: vertexs),
                                          duration: 1.5)
             
-            indicatorShapeLayer.add(key1, forKey: key1.keyPath)
+            leftCircle.add(key1, forKey: key1.keyPath)
             
             let key2 = keyFrameAnimation(with: trianglePath(with: rightPoint, vertexs: vertexs),
                                          duration: 1.5)
             
-            indicatorShapeLayer.add(key2, forKey: key2.keyPath)
+            rightCircle.add(key2, forKey: key2.keyPath)
         }
     }
     
