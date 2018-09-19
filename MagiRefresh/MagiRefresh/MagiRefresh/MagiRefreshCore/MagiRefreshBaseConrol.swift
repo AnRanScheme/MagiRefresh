@@ -78,7 +78,7 @@ class MagiRefreshBaseConrol: UIView {
     var progress: CGFloat = 0.0 {
         willSet {
             if progress == newValue { return }
-            magiRefreshControlDidScrollWithProgress(progress: progress,
+            magiRefreshControlDidScrollWithProgress(progress: newValue,
                                                     max: kMagiStretchOffsetYAxisThreshold)
         }
     }
@@ -355,6 +355,7 @@ extension MagiRefreshBaseConrol: MagiRefreshControlProtocol {
     }
     
     func magiRefreshControlDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
+        print("progress===========\(progress)")
         magiDidScrollWithProgress(progress: progress, max: max)
     }
     

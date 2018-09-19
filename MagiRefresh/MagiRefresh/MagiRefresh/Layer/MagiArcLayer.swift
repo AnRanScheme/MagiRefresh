@@ -35,16 +35,20 @@ class MagiArcLayer: CALayer {
     
     fileprivate var bezierPath: UIBezierPath = UIBezierPath()
     
-    public var ringBackgroundColor: UIColor = UIColor(red: 180, green: 180, blue: 180, alpha: 1) {
+    public var ringBackgroundColor: UIColor = UIColor(red: 180/255, green: 180/255, blue: 180/255, alpha: 1) {
         didSet {
             ringBackgroundLayer.strokeColor = ringBackgroundColor.cgColor
         }
     }
     
-    public var ringFillColor: UIColor = UIColor(red: 230, green: 230, blue: 230, alpha: 1) {
+    public var ringFillColor: UIColor = UIColor.red {
         didSet {
-           ringShapeLayer.strokeColor = ringFillColor.cgColor
+            ringShapeLayer.strokeColor = ringFillColor.cgColor
         }
+    }
+    
+    override init(layer: Any) {
+        super.init(layer: layer)
     }
     
     override init() {
@@ -60,7 +64,7 @@ class MagiArcLayer: CALayer {
     override func layoutSublayers() {
         super.layoutSublayers()
         
-        ringBackgroundLayer.frame = CGRect(x: 0,
+        ringBackgroundLayer.bounds = CGRect(x: 0,
                                            y: 0,
                                            width: 30,
                                            height: 30)

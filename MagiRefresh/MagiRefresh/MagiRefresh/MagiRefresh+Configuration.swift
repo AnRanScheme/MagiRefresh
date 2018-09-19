@@ -19,22 +19,26 @@ extension MagiRefresh {
         switch refreshStyle {
         case .native:
             header = MagiNativeHeader()
+        case .replicatorWoody:
+            fallthrough
+        case .replicatorAllen:
+            fallthrough
+        case .replicatorCircle:
+            fallthrough
+        case .replicatorDot:
+            fallthrough
+        case .replicatorArc:
+            fallthrough
+        case .replicatorTriangle:
+            header = MagiReplicatorHeader()
+            if let head = header as? MagiReplicatorHeader {
+                head.animationStyle = MagiReplicatorLayerAnimationStyle(
+                    rawValue: refreshStyle.rawValue - 1) ?? .woody
+            }
+        case .animatableRing:
+            header = MagiRingIndicatorHeader()
         case .animatableArrow:
             header = MagiArrowHeader()
-        case .animatableRing:
-            break
-        case .replicatorAllen:
-            break
-        case .replicatorArc:
-            break
-        case .replicatorCircle:
-            break
-        case .replicatorDot:
-            break
-        case .replicatorTriangle:
-            break
-        case .replicatorWoody:
-            break
         }
         header?.refreshClosure = completion
         header?.themeColor = themeColor

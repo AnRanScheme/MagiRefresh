@@ -12,9 +12,9 @@ import UIKit
 
 class MagiArrowFooter: MagiRefreshFooterConrol {
     
-    var pullingText: String = MagiRefreshDefaults.shard.footPullingText
-    var readyText: String = MagiRefreshDefaults.shard.readyText
-    var refreshingText: String = MagiRefreshDefaults.shard.refreshingText
+    var pullingText: String = MagiRefreshDefaults.shared.footPullingText
+    var readyText: String = MagiRefreshDefaults.shared.readyText
+    var refreshingText: String = MagiRefreshDefaults.shared.refreshingText
     
     fileprivate lazy var arrowImgV: UIImageView = {
         let arrowImgV = UIImageView()

@@ -10,9 +10,9 @@ import UIKit
 
 class MagiArrowHeader: MagiRefreshHeaderConrol {
     
-    var pullingText: String = MagiRefreshDefaults.shard.headPullingText
-    var readyText: String = MagiRefreshDefaults.shard.readyText
-    var refreshingText: String = MagiRefreshDefaults.shard.refreshingText
+    var pullingText: String = MagiRefreshDefaults.shared.headPullingText
+    var readyText: String = MagiRefreshDefaults.shared.readyText
+    var refreshingText: String = MagiRefreshDefaults.shared.refreshingText
     
     fileprivate lazy var arrowImgV: UIImageView = {
         let arrowImgV = UIImageView()
@@ -21,8 +21,7 @@ class MagiArrowHeader: MagiRefreshHeaderConrol {
         let image = UIImage(contentsOfFile: urlString)
         arrowImgV.image = image
         arrowImgV.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        
-        
+
         return arrowImgV
     }()
     

@@ -47,6 +47,8 @@
 		35F8FA402151EA11009143F7 /* MagiAnimatableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8FA3F2151EA11009143F7 /* MagiAnimatableProtocol.swift */; };
 		35F8FA422151EA6C009143F7 /* MagiArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8FA412151EA6C009143F7 /* MagiArcLayer.swift */; };
 		35F8FA442151EE83009143F7 /* MagiReplicatorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8FA432151EE83009143F7 /* MagiReplicatorLayer.swift */; };
+		35F8FA4621522220009143F7 /* MagiReplicatorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8FA4521522220009143F7 /* MagiReplicatorHeader.swift */; };
+		35F8FA48215225E8009143F7 /* MagiRingIndicatorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8FA47215225E8009143F7 /* MagiRingIndicatorHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		35F8FA3F2151EA11009143F7 /* MagiAnimatableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiAnimatableProtocol.swift; sourceTree = "<group>"; };
 		35F8FA412151EA6C009143F7 /* MagiArcLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiArcLayer.swift; sourceTree = "<group>"; };
 		35F8FA432151EE83009143F7 /* MagiReplicatorLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiReplicatorLayer.swift; sourceTree = "<group>"; };
+		35F8FA4521522220009143F7 /* MagiReplicatorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiReplicatorHeader.swift; sourceTree = "<group>"; };
+		35F8FA47215225E8009143F7 /* MagiRingIndicatorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiRingIndicatorHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +238,8 @@
 			children = (
 				3526B131213E2C0E00A6A244 /* MagiNativeHeader.swift */,
 				3526B135213F6C8900A6A244 /* MagiArrowHeader.swift */,
+				35F8FA4521522220009143F7 /* MagiReplicatorHeader.swift */,
+				35F8FA47215225E8009143F7 /* MagiRingIndicatorHeader.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 				3526B11D213CE97000A6A244 /* MagiRefreshBaseConrol.swift in Sources */,
 				3526B123213CEAFE00A6A244 /* MagiRefreshProtocol.swift in Sources */,
 				3526B136213F6C8900A6A244 /* MagiArrowHeader.swift in Sources */,
+				35F8FA4621522220009143F7 /* MagiReplicatorHeader.swift in Sources */,
 				3526B127213D1CCE00A6A244 /* MagiAlertLabel.swift in Sources */,
 				3593E2882138EB8F008240C5 /* CALayer+MagiRefresh.swift in Sources */,
 				3593E2852138EB8F008240C5 /* MagiRefresh.swift in Sources */,
@@ -512,6 +519,7 @@
 				3593E2892138EB8F008240C5 /* UIScrollView+MagiRefresh.swift in Sources */,
 				3593E28A2138EB8F008240C5 /* UICollectionView+MagiRefresh.swift in Sources */,
 				3593E2832138EB8F008240C5 /* MagiBasePlaceHolder.swift in Sources */,
+				35F8FA48215225E8009143F7 /* MagiRingIndicatorHeader.swift in Sources */,
 				3526B116213CDC4700A6A244 /* PlaceHolderViewController.swift in Sources */,
 				3593E2822138EB8F008240C5 /* UIView+MagiRefresh.swift in Sources */,
 				3526B134213E322600A6A244 /* MagiNativeFooter.swift in Sources */,
