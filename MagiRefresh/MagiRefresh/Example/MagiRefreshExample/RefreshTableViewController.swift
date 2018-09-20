@@ -113,9 +113,6 @@ extension RefreshTableViewController {
         navigationItem.rightBarButtonItem = refresh
         
         view.addSubview(tableView)
-        
-
-        
     }
     
 }

@@ -355,7 +355,6 @@ extension MagiRefreshBaseConrol: MagiRefreshControlProtocol {
     }
     
     func magiRefreshControlDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
-        print("baseHeaderprogress===========\(progress)")
         magiDidScrollWithProgress(progress: progress, max: max)
     }
     

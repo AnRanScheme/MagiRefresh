@@ -41,13 +41,11 @@ class MagiRingIndicatorHeader: MagiRefreshHeaderConrol {
     }
     
     override func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
-        print("RingIndicatorHeader   ------   \(progress)")
         var progress1 = progress
         if (progress1 >= 0.7) {
             progress1 = (progress1-0.7)/(max - 0.7)
             arcLayer.setProgress(progress1)
         }
-        print("RingIndicatorHeaderprogress1   ------   \(progress1)")
     }
     
     override func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {

@@ -53,8 +53,6 @@ class MagiRefreshHeaderConrol: MagiRefreshBaseConrol {
     override func privateContentOffsetOfScrollViewDidChange(_ contentOffset: CGPoint) {
         super.privateContentOffsetOfScrollViewDidChange(contentOffset)
         
-        print("header   -----    \(contentOffset.y)")
-        
         let maxY = MagiRefreshHeaderConrol.MaxYForTriggeringRefresh(self)
         let minY = MagiRefreshHeaderConrol.MinYForNone(self)
         let originY = contentOffset.y

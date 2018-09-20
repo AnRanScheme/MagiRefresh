@@ -23,14 +23,14 @@ class MagiArrowFooter: MagiRefreshFooterConrol {
         let image = UIImage(contentsOfFile: urlString)
         arrowImgV.image = image
         arrowImgV.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-
+      
         return arrowImgV
     }()
     
     fileprivate lazy var promptlabel: UILabel = {
         let promptlabel = UILabel()
         promptlabel.textAlignment = .center
-        promptlabel.textColor = UIColor.lightGray
+        promptlabel.textColor = UIColor.gray
         promptlabel.sizeToFit()
         if #available(iOS 8.2, *) {
             promptlabel.font = UIFont.systemFont(ofSize: 11,
@@ -66,6 +66,7 @@ class MagiArrowFooter: MagiRefreshFooterConrol {
         arrowImgV.frame = CGRect(x: 0, y: 0, width: 12, height: 12)
         arrowImgV.magi_right = promptlabel.magi_left-20.0
         arrowImgV.magi_centerY = promptlabel.magi_centerY
+        
         indicator.center = arrowImgV.center
     }
     
@@ -80,19 +81,19 @@ class MagiArrowFooter: MagiRefreshFooterConrol {
             arrowImgV.isHidden = false
             indicator.stopAnimating()
             UIView.animate(withDuration: 0.3) {
-                self.arrowImgV.transform = CGAffineTransform.identity
+                self.arrowImgV.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
             }
         case .scrolling:
             promptlabel.text = pullingText
             promptlabel.sizeToFit()
             UIView.animate(withDuration: 0.3) {
-                self.arrowImgV.transform = CGAffineTransform.identity
+                self.arrowImgV.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
             }
         case .ready:
             indicator.stopAnimating()
             promptlabel.text = readyText
             UIView.animate(withDuration: 0.3) {
-                self.arrowImgV.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+                self.arrowImgV.transform = CGAffineTransform(rotationAngle: 2*CGFloat.pi)
             }
         case .refreshing:
             promptlabel.text = refreshingText

@@ -170,7 +170,8 @@ extension RefreshMainListViewController: UITableViewDelegate {
             let vc = RefreshTableViewController(MagiRefreshStyle(rawValue: indexPath.row)!)
             navigationController?.pushViewController(vc, animated: true)
         case 1:
-            break
+            let vc = RefreshCollectionViewController(MagiRefreshStyle(rawValue: indexPath.row)!)
+            navigationController?.pushViewController(vc, animated: true)
         case 2:
             break
         default:
