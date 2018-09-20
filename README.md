@@ -110,7 +110,7 @@
 
   使用预加载功能，请严格按照下面要求使用:
 
-  * ```tableView.magiRefresh.footer?.isAutoRefreshOnFoot = true``` 请手动将刷新该属性至为TRUE；
+  * ```tableView.magiRefresh.footer?.isAutoRefreshOnFoot = true``` 请手动将刷新该属性至为False；
 
   * 在刷新调用的block块中，严格按下列逻辑编写：
 
