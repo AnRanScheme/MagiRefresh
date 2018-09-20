@@ -1,6 +1,6 @@
 <p align="center">
   <a href=#>
-    <img src="https://github.com/xorshine/KafkaRefresh/blob/master/assets/titleView.png" alt="" width=60 height=60>
+    <img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/titleView.png" alt="" width=60 height=60>
   </a>
 
   <h3 align="center">MagiRefresh</h3> 
@@ -15,6 +15,8 @@
 </p> 
 <br>
 
+****
+
 ### Screenshots
 <table>
 <tr height="60px" align="center">
@@ -24,18 +26,18 @@
 </tr>
 <tr align="center" height="120px">
   <td width="300px">native</td>
-  <td><img src="Assets/Gif/native.gif"></img></td>
-  <td><img src="Assets/Gif/_native.gif"></img></td>
+  <td><img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/Gif/native.gif"></img></td>
+  <td><img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/Gif/_native.gif"></img></td>
 </tr>
 <tr align="center" height="120px">
   <td>replicatorWoody</td>
-  <td><img src="Assets/Gif/woody.gif"></img></td>
-  <td><img src="Assets/Gif/_woody.gif"></img></td>
+  <td><img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/Gif/woody.gif"></img></td>
+  <td><img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/Gif/_woody.gif"></img></td>
 </tr>
 <tr align="center" height="120px">
   <td>replicatorAllen</td>
-  <td><img src="Assets/Gif/allen.gif"></img></td>
-  <td><img src="Assets/Gif/_allen.gif"></img></td>
+  <td><img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/Gif/allen.gif"></img></td>
+  <td><img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/Gif/_allen.gif"></img></td>
 </tr>
 <tr align="center" height="120px">
   <td>replicatorCircle</td>
