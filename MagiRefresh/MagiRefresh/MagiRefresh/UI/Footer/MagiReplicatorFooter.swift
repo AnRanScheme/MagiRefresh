@@ -42,10 +42,6 @@ class MagiReplicatorFooter: MagiRefreshFooterConrol {
     }
     
     override func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
-        var progress1 = progress
-        if (progress1 >= 0.8) {
-            progress1 = (progress1-0.7)/(max - 0.7)
-        }
         switch animationStyle {
         case .woody:
             break
@@ -56,7 +52,11 @@ class MagiReplicatorFooter: MagiRefreshFooterConrol {
         case .dot:
             break
         case .arc:
-            replicatorLayer.indicatorShapeLayer.strokeEnd = progress1
+            var progress1 = progress
+            if (progress1 >= 0.7) {
+                progress1 = (progress1-0.7)/(max - 0.7)
+                replicatorLayer.indicatorShapeLayer.strokeEnd = progress1
+            }
         case .triangle:
             break
         }

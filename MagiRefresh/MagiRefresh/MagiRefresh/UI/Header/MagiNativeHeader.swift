@@ -31,7 +31,7 @@ class MagiNativeHeader: MagiRefreshHeaderConrol {
     }
     
     override func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
-       print("progress---------\(progress)-")
+       
     }
     
     override func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {

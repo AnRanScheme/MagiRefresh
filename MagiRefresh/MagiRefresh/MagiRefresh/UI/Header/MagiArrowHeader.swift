@@ -63,11 +63,7 @@ class MagiArrowHeader: MagiRefreshHeaderConrol {
         promptlabel.center = CGPoint(x: magi_width/2, y: magi_height/2)
         arrowImgV.frame = CGRect(x: 0, y: 0, width: 12, height: 12)
         arrowImgV.magi_right = promptlabel.magi_left-20.0
-        print("promptlabel.magi_left-20.0===\(promptlabel.magi_left-20.0)")
-        print("arrowImgV.magi_right===\(arrowImgV.magi_right)")
         arrowImgV.magi_centerY = promptlabel.magi_centerY
-        print("promptlabelFrame----\(promptlabel.frame)")
-        print("arrowImgVFrame----\(arrowImgV.frame)")
         indicator.center = arrowImgV.center
     }
     
