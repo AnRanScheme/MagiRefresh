@@ -1,3 +1,20 @@
+<p align="center">
+  <a href=#>
+    <img src="https://github.com/xorshine/KafkaRefresh/blob/master/assets/titleView.png" alt="" width=60 height=60>
+  </a>
+
+  <h3 align="center">MagiRefresh</h3> 
+  <p align="center">
+     内置多种动画、可自定义和灵活的iOS下拉刷新框架(Swift实现)
+    <br> 
+    <br>
+    <a href="https://github.com/xorshine/KafkaRefresh/issues/new?template=bug_cn.md">Bug提交</a>
+    ·
+    <a href="https://github.com/xorshine/KafkaRefresh/issues/new?">需求提交</a>  
+  </p>
+</p> 
+<br>
+
 ### Screenshots
 <table>
 <tr height="60px" align="center">
