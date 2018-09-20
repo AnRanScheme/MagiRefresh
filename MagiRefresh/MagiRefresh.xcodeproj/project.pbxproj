@@ -52,6 +52,7 @@
 		35F8FA4A215248E2009143F7 /* MagiRingIndicatorFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8FA49215248E2009143F7 /* MagiRingIndicatorFooter.swift */; };
 		35F8FA4D21524B66009143F7 /* MagiReplicatorFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8FA4C21524B66009143F7 /* MagiReplicatorFooter.swift */; };
 		35F8FA5021536EF7009143F7 /* RefreshCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8FA4F21536EF7009143F7 /* RefreshCollectionViewController.swift */; };
+		35F8FA52215379CD009143F7 /* RefreshCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8FA51215379CD009143F7 /* RefreshCustomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		35F8FA49215248E2009143F7 /* MagiRingIndicatorFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiRingIndicatorFooter.swift; sourceTree = "<group>"; };
 		35F8FA4C21524B66009143F7 /* MagiReplicatorFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagiReplicatorFooter.swift; sourceTree = "<group>"; };
 		35F8FA4F21536EF7009143F7 /* RefreshCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshCollectionViewController.swift; sourceTree = "<group>"; };
+		35F8FA51215379CD009143F7 /* RefreshCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshCustomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				352D5425214F408400CBB77C /* RefreshViewController.swift */,
 				352D5427214F54E300CBB77C /* RefreshTableViewController.swift */,
 				35F8FA4F21536EF7009143F7 /* RefreshCollectionViewController.swift */,
+				35F8FA51215379CD009143F7 /* RefreshCustomViewController.swift */,
 			);
 			path = MagiRefreshExample;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				3593E2852138EB8F008240C5 /* MagiRefresh.swift in Sources */,
 				3526B130213E287400A6A244 /* MagiRefresh+Configuration.swift in Sources */,
 				3593E2492138EB34008240C5 /* ViewController.swift in Sources */,
+				35F8FA52215379CD009143F7 /* RefreshCustomViewController.swift in Sources */,
 				3526B11A213CDD8F00A6A244 /* MyEmptyView.swift in Sources */,
 				3593E2812138EB8F008240C5 /* MagiProtocol.swift in Sources */,
 				3593E2892138EB8F008240C5 /* UIScrollView+MagiRefresh.swift in Sources */,
