@@ -26,18 +26,18 @@
 </tr>
 <tr align="center" height="120px">
   <td width="300px">native</td>
-  <td><img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/Gif/native.gif"></img></td>
-  <td><img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/Gif/_native.gif"></img></td>
+  <td><img src="Assets/Gif/native.gif"></img></td>
+  <td><img src="Assets/Gif/_native.gif"></img></td>
 </tr>
 <tr align="center" height="120px">
   <td>replicatorWoody</td>
-  <td><img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/Gif/woody.gif"></img></td>
-  <td><img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/Gif/_woody.gif"></img></td>
+  <td><img src="Assets/Gif/woody.gif"></img></td>
+  <td><img src="Assets/Gif/_woody.gif"></img></td>
 </tr>
 <tr align="center" height="120px">
   <td>replicatorAllen</td>
-  <td><img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/Gif/allen.gif"></img></td>
-  <td><img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/Gif/_allen.gif"></img></td>
+  <td><img src="Assets/Gif/allen.gif"></img></td>
+  <td><img src="Assets/Gif/_allen.gif"></img></td>
 </tr>
 <tr align="center" height="120px">
   <td>replicatorCircle</td>
@@ -110,7 +110,7 @@
 
   使用预加载功能，请严格按照下面要求使用:
 
-  * ```tableView.magiRefresh.footer?.isAutoRefreshOnFoot = true``` 请手动将刷新该属性至为TRUE；
+  * ```tableView.magiRefresh.footer?.isAutoRefreshOnFoot = true``` 请手动将刷新该属性至为False；
 
   * 在刷新调用的block块中，严格按下列逻辑编写：
 
@@ -239,3 +239,6 @@ func endRefreshingAndNoLongerRefreshingWithAlertText(_ text: String)
         }
     }
  ```
+ 
+ ### 小记
+ 这个框架呢,是我最近在写一个新的项目Swift,因为是新的所以说有的东西动用比较新的技术,但是我看到了MJRefresh这个OC框架不能忍,我看了挺多的Swift的下拉刷新框架都觉得不是很好,但是不久之前看到了一个OC的框架KafkaRefresh,我决定修改一下架构然后重写了一个Swift板的,当然架构还是有所不同的但是样式是一样的
