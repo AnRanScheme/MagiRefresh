@@ -66,7 +66,7 @@ class RefreshTableViewController: UIViewController {
                 })
                 
         })
-        tableView.magiRefresh.footer?.isAutoRefreshOnFoot = true
+        tableView.magiRefresh.footer?.isAutoRefreshOnFoot = false
         
         return tableView
     }()
