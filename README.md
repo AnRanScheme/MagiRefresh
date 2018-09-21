@@ -129,23 +129,23 @@
 ##### 1.初始化控件
 * 方式一
 ```Swift
-#pragma mark - head
+// MARK: - head
 
- tableView.magiRefresh.bindStyleForHeaderRefresh(themeColor: UIColor.red,
+tableView.magiRefresh.bindStyleForHeaderRefresh(themeColor: UIColor.red,
                                                          refreshStyle: MagiRefreshStyle.animatableArrow,
                                                          completion: {
                                                             print("加载完成处理逻辑")
          })
 
-#pragma mark - foot
+// MARK: - foot
 
- tableView.magiRefresh.bindStyleForFooterRefresh(themeColor: UIColor.red,
-                                                         refreshStyle: MagiRefreshStyle.animatableArrow,
-                                                         completion: {
+tableView.magiRefresh.bindStyleForFooterRefresh(themeColor: UIColor.red,
+                                                 refreshStyle: MagiRefreshStyle.animatableArrow,
+                                                 completion: {
                                                             print("加载完成处理逻辑")
-         })
+})
 
-#pragma mark - auto refresh
+// MARK: - auto refresh
 
 tableView.magiRefresh.footer?.isAutoRefreshOnFoot = true
 ```
@@ -160,16 +160,18 @@ tableView.magiRefresh.footer?.isAutoRefreshOnFoot = true
 
 * 方式三 全局配置
 ```Swift
- func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey:    Any]?) -> Bool {
+ func application(_ application: UIApplication, didFinishLaunchingWithOptions 
+                  launchOptions: [UIApplicationLaunchOptionsKey:    Any]?) -> Bool {
         MagiRefreshDefaults.shared.headerDefaultStyle = .replicatorAllen
+	
         return true
   }
 
-#pragma mark - global
+// MARK: - global
 
 tableView.magiRefresh.bindStyleForHeaderRefresh {
           
- }
+}
 
 ```
 ##### 3.手动触发刷新
@@ -184,7 +186,7 @@ tableView.magiRefresh.bindStyleForHeaderRefresh {
 /*
 	一般方式结束刷新
 */
- func endRefreshing()
+func endRefreshing()
  
 /*
 	结束刷新且需要提示文字
@@ -213,15 +215,15 @@ func endRefreshingAndNoLongerRefreshingWithAlertText(_ text: String)
 
  ```Swift
 
-    override func setupProperties() {
-        super.setupProperties()
-        初始化属性
-    }
-	//初始化属性
+ override func setupProperties() {
+       super.setupProperties()
+       //初始化属性
+ }
+	
  
  override func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
        //进度回调
-    }
+ }
 
  override func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
         super.magiRefreshStateDidChange(status)
@@ -237,7 +239,7 @@ func endRefreshingAndNoLongerRefreshingWithAlertText(_ text: String)
         case .willEndRefresh:
             break
         }
-    }
+  }
  ```
  
  ### 小记
