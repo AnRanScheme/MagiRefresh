@@ -8,8 +8,8 @@
 
 import UIKit
 
-//每个子控件之间的间距
-let kSubViewMargin = 20.0
+// 每个子控件之间的间距
+let kSubViewMargin: CGFloat = 20.0
 // 描述字体
 let kTitleLabFont = UIFont.systemFont(ofSize: 16)
 // 详细描述字体
@@ -17,18 +17,18 @@ let kDetailLabFont = UIFont.systemFont(ofSize: 14)
 // 按钮字体大小
 let kActionBtnFont = UIFont.systemFont(ofSize: 14)
 // 按钮高度
-let kActionBtnHeight = 40.0
-let kActionBtnWidth  = 100.0
-//水平方向内边距
+let kActionBtnHeight: CGFloat = 40.0
+// 按钮宽度
+let kActionBtnWidth: CGFloat  = 100.0
+// 水平方向内边距
 let kActionBtnHorizontalMargin = 30.0
-//黑色
-let kBlackColor = UIColor.init(red: 0.3, green: 0.3, blue: 0.3, alpha: 1)
-//灰色
-let kGrayColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
+// 黑色
+let kBlackColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1)
+// 灰色
+let kGrayColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
 
 class MagiPlaceHolder: MagiBasePlaceHolder {
-    
-    
+
     // MARK: - 控件
     /// 图片
     fileprivate lazy var promptImageView: UIImageView = {
@@ -255,14 +255,6 @@ class MagiPlaceHolder: MagiBasePlaceHolder {
     }
     
     func setSubViewFrame() {
-        /// 获取self原始宽高
-        let scrollViewWidth = magi_width
-        let scrollViewHeight = magi_height
-        /// 重新设置self的frame（大小为content的大小）
-        magi_size = CGSize(width: contentWidth,
-                           height: contentHeight)
-        center = CGPoint(x: scrollViewWidth*0.5,
-                         y: scrollViewHeight*0.5)
         /// 设置contentView
         self.contentView.frame = bounds
         
@@ -277,11 +269,6 @@ class MagiPlaceHolder: MagiBasePlaceHolder {
             contentView.addSubview(titleLabel)
             contentView.addSubview(detailLabel)
             contentView.addSubview(actionButton)
-            promptImageView.magi_centerX = magi_centerX
-            promptImageView.magi_centerY = magi_centerY
-            titleLabel.magi_centerX = magi_centerX
-            detailLabel.magi_centerX = magi_centerX
-            actionButton.magi_centerX = magi_centerX
         }
         
         /// 有无偏移
