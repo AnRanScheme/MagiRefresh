@@ -12,7 +12,7 @@ class RefreshTableViewController: UIViewController {
     
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.bounds,
-                                    style: UITableViewStyle.plain)
+                                    style: UITableView.Style.plain)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 0
@@ -151,7 +151,7 @@ extension RefreshTableViewController: UITableViewDataSource {
             withIdentifier: RefreshTableViewController.Identifier)
         if cell == nil {
             cell = UITableViewCell(
-                style: UITableViewCellStyle.subtitle,
+                style: UITableViewCell.CellStyle.subtitle,
                 reuseIdentifier: RefreshTableViewController.Identifier)
         }
         

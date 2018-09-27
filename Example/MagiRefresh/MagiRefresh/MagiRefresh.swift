@@ -75,7 +75,7 @@ class MagiRefresh {
         scrollView?.layoutSubviews()
         placeHolder?.isHidden = false
         if let place = placeHolder {
-            scrollView?.bringSubview(toFront: place)
+            scrollView?.bringSubviewToFront(place)
         }
     }
     

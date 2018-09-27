@@ -12,7 +12,7 @@ class MagiRingIndicatorHeader: MagiRefreshHeaderConrol {
 
     fileprivate lazy var indicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(
-            activityIndicatorStyle: .gray)
+            style: .gray)
         indicator.hidesWhenStopped = true
         
         return indicator

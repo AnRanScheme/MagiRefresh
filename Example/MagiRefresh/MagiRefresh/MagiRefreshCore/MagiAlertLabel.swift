@@ -52,8 +52,8 @@ class MagiAlertLabel: UILabel, CAAnimationDelegate {
         let animation = CABasicAnimation(keyPath: "bounds.size.width")
         animation.fromValue = 0
         animation.toValue = magi_width
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        animation.fillMode = kCAFillModeForwards
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        animation.fillMode = CAMediaTimingFillMode.forwards
         animation.duration = 0.3
         animation.isRemovedOnCompletion = false
         animation.delegate = self

@@ -446,13 +446,16 @@
 				TargetAttributes = {
 					3593E2422138EB34008240C5 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					3593E2562138EB35008240C5 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 3593E2422138EB34008240C5;
 					};
 					3593E2612138EB35008240C5 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 3593E2422138EB34008240C5;
 					};
 				};
@@ -734,7 +737,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MagiRefresh.com.MagiRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -753,7 +756,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MagiRefresh.com.MagiRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -773,7 +776,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MagiRefresh.com.MagiRefreshTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagiRefresh.app/MagiRefresh";
 			};
@@ -794,7 +797,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MagiRefresh.com.MagiRefreshTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagiRefresh.app/MagiRefresh";
 			};
@@ -814,7 +817,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MagiRefresh.com.MagiRefreshUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MagiRefresh;
 			};
@@ -834,7 +837,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = MagiRefresh.com.MagiRefreshUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MagiRefresh;
 			};

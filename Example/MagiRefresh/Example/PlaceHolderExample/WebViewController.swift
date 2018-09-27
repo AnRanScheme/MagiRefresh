@@ -65,7 +65,7 @@ class WebViewController: UIViewController {
             }
             if webView.estimatedProgress >= 1.0 {
                 progressView.setProgress(0.99999, animated: true)
-                UIView.animate(withDuration: 0.3, delay: 0.3, options: UIViewAnimationOptions.autoreverse, animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.3, options: UIView.AnimationOptions.autoreverse, animations: {
                     self.progressView.isHidden = true
                     self.progressView.setProgress(0.0, animated: false)
                 }, completion: nil)

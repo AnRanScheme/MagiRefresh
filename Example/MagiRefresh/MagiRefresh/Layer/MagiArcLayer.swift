@@ -13,7 +13,7 @@ class MagiArcLayer: CALayer {
     fileprivate lazy var ringBackgroundLayer: CAShapeLayer = {
         let ringBackgroundLayer = CAShapeLayer()
         ringBackgroundLayer.lineWidth = 3
-        ringBackgroundLayer.lineCap = kCALineCapRound
+        ringBackgroundLayer.lineCap = CAShapeLayerLineCap.round
         ringBackgroundLayer.backgroundColor = UIColor.clear.cgColor
         ringBackgroundLayer.fillColor = UIColor.clear.cgColor
         ringBackgroundLayer.strokeColor = ringBackgroundColor.cgColor
@@ -24,7 +24,7 @@ class MagiArcLayer: CALayer {
     fileprivate lazy var ringShapeLayer: CAShapeLayer = {
         let ringShapeLayer = CAShapeLayer()
         ringShapeLayer.lineWidth = 3
-        ringShapeLayer.lineCap = kCALineCapRound
+        ringShapeLayer.lineCap = CAShapeLayerLineCap.round
         ringShapeLayer.backgroundColor = UIColor.clear.cgColor
         ringShapeLayer.fillColor = UIColor.clear.cgColor
         ringShapeLayer.strokeColor = ringFillColor.cgColor

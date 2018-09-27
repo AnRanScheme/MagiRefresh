@@ -416,7 +416,7 @@ extension MagiPlaceHolder {
         let textSize: CGSize = ((text as NSString).boundingRect(
             with: size,
             options: .usesLineFragmentOrigin,
-            attributes: [kCTFontAttributeName as NSAttributedStringKey: font],
+            attributes: [kCTFontAttributeName as NSAttributedString.Key: font],
             context: nil)).size
         
         return textSize

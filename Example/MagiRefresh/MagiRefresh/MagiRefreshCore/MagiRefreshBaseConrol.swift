@@ -275,7 +275,7 @@ class MagiRefreshBaseConrol: UIView {
             return
         }
         if text != "" {
-            bringSubview(toFront: alertLabel)
+            bringSubviewToFront(alertLabel)
             alertLabel.text = text
             alertLabel.startAnimating()
             
@@ -310,7 +310,7 @@ class MagiRefreshBaseConrol: UIView {
                 self.alertLabel.alpha = 1.0
             }
         }
-        bringSubview(toFront: alertLabel)
+        bringSubviewToFront(alertLabel)
         alertLabel.text = text
         if text != "" {
             let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * 1.5 )) / Double(NSEC_PER_SEC)

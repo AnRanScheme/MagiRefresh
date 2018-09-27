@@ -97,7 +97,7 @@ class MagiReplicatorLayer: CALayer {
     lazy var indicatorShapeLayer: CAShapeLayer = {
         let indicatorShapeLayer = CAShapeLayer()
         indicatorShapeLayer.contentsScale = UIScreen.main.scale
-        indicatorShapeLayer.lineCap = kCALineCapRound
+        indicatorShapeLayer.lineCap = CAShapeLayerLineCap.round
         
         return indicatorShapeLayer
     }()

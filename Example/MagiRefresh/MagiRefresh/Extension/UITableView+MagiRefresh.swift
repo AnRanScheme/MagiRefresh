@@ -49,26 +49,26 @@ extension UITableView: MagiInitAware {
     
     /// section
     @objc
-    fileprivate func magi_insertSections(_ sections: NSIndexSet, with animation: UITableViewRowAnimation) {
+    fileprivate func magi_insertSections(_ sections: NSIndexSet, with animation: UITableView.RowAnimation) {
         magi_insertSections(sections, with: animation)
             magiRefresh.getDataAndSet()
     }
     
     @objc
-    fileprivate func magi_deleteSections(_ sections: NSIndexSet, with animation: UITableViewRowAnimation) {
+    fileprivate func magi_deleteSections(_ sections: NSIndexSet, with animation: UITableView.RowAnimation) {
         magi_deleteSections(sections, with: animation)
         magiRefresh.getDataAndSet()
     }
     
     /// row
     @objc
-    fileprivate func magi_insertRowsAtIndexPaths(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation){
+    fileprivate func magi_insertRowsAtIndexPaths(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation){
         magi_insertRowsAtIndexPaths(at: indexPaths, with: animation)
         magiRefresh.getDataAndSet()
     }
     
     @objc
-    fileprivate func magi_deleteRowsAtIndexPaths(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation){
+    fileprivate func magi_deleteRowsAtIndexPaths(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation){
         magi_deleteRowsAtIndexPaths(at: indexPaths, with: animation)
         magiRefresh.getDataAndSet()
     }
