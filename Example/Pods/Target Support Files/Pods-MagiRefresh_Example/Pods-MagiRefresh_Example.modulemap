@@ -1,0 +1,6 @@
+framework module Pods_MagiRefresh_Example {
+  umbrella header "Pods-MagiRefresh_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

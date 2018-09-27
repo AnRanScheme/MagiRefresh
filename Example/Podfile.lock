@@ -1,0 +1,16 @@
+PODS:
+  - MagiRefresh (0.1.0)
+
+DEPENDENCIES:
+  - MagiRefresh (from `../`)
+
+EXTERNAL SOURCES:
+  MagiRefresh:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MagiRefresh: 9ad669c0436eefe0110b5b66e3125acc214ebe4e
+
+PODFILE CHECKSUM: 19ab99050fc000bde15eee5460009ca71635ceaa
+
+COCOAPODS: 1.5.3

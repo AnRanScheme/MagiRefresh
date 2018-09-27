@@ -1,0 +1,6 @@
+framework module MagiRefresh {
+  umbrella header "MagiRefresh-umbrella.h"
+
+  export *
+  module * { export * }
+}

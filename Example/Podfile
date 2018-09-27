@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MagiRefresh_Example' do
+  pod 'MagiRefresh', :path => '../'
+
+  target 'MagiRefresh_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
