@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum MagiRefreshStyle: Int {
+public enum MagiRefreshStyle: Int {
     case native = 0
     case replicatorWoody
     case replicatorAllen
@@ -20,17 +20,17 @@ enum MagiRefreshStyle: Int {
     case animatableArrow
 }
 
-class MagiRefreshDefaults {
+public class MagiRefreshDefaults {
     
-    var headerDefaultStyle: MagiRefreshStyle = .animatableArrow
-    var footerDefaultStyle: MagiRefreshStyle = .native
-    var themeColor: UIColor = UIColor.blue
-    var backgroundColor: UIColor = UIColor.white
-    var headPullingText: String = "继续下拉"
-    var footPullingText: String = "继续上拉"
-    var readyText: String = "松开刷新"
-    var refreshingText: String = "正在加载"
+    public var headerDefaultStyle: MagiRefreshStyle = .animatableArrow
+    public var footerDefaultStyle: MagiRefreshStyle = .native
+    public var themeColor: UIColor = UIColor.blue
+    public var backgroundColor: UIColor = UIColor.white
+    public var headPullingText: String = "继续下拉"
+    public var footPullingText: String = "继续上拉"
+    public var readyText: String = "松开刷新"
+    public var refreshingText: String = "正在加载"
     
-    static let shared = MagiRefreshDefaults()
+    public static let shared = MagiRefreshDefaults()
     
 }

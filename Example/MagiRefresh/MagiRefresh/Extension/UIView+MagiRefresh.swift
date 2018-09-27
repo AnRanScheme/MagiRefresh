@@ -12,7 +12,7 @@ import Foundation
 extension UIView {
     
     //frame.origin.x
-    public var magi_left: CGFloat {
+    var magi_left: CGFloat {
         get {
             return self.frame.origin.x
         }
@@ -24,7 +24,7 @@ extension UIView {
     }
     
     //frame.origin.y
-    public var magi_top: CGFloat {
+    var magi_top: CGFloat {
         get {
             return self.frame.origin.y
         }
@@ -36,7 +36,7 @@ extension UIView {
     }
     
     //frame.origin.x + frame.size.width
-    public var magi_right: CGFloat {
+    var magi_right: CGFloat {
         get {
             return self.frame.origin.x + self.frame.size.width
         }
@@ -48,7 +48,7 @@ extension UIView {
     }
     
     //frame.origin.y + frame.size.height
-    public var magi_bottom: CGFloat {
+    var magi_bottom: CGFloat {
         get {
             return self.frame.origin.y + self.frame.size.height
         }
@@ -60,7 +60,7 @@ extension UIView {
     }
     
     //frame.size.width
-    public var magi_width: CGFloat {
+    var magi_width: CGFloat {
         get {
             return self.frame.size.width
         }
@@ -72,7 +72,7 @@ extension UIView {
     }
     
     //frame.size.height
-    public var magi_height: CGFloat {
+    var magi_height: CGFloat {
         get {
             return self.frame.size.height
         }
@@ -84,7 +84,7 @@ extension UIView {
     }
     
     //center.x
-    public var magi_centerX: CGFloat {
+    var magi_centerX: CGFloat {
         get {
             return self.center.x
         }
@@ -95,7 +95,7 @@ extension UIView {
     }
     
     //center.y
-    public var magi_centerY: CGFloat {
+    var magi_centerY: CGFloat {
         get {
             return self.center.y
         }
@@ -106,7 +106,7 @@ extension UIView {
     }
     
     //frame.origin
-    public var magi_origin: CGPoint {
+    var magi_origin: CGPoint {
         get {
             return self.frame.origin
         }
@@ -118,7 +118,7 @@ extension UIView {
     }
     
     //frame.size
-    public var magi_size: CGSize {
+    var magi_size: CGSize {
         get {
             return self.frame.size
         }
@@ -130,20 +130,20 @@ extension UIView {
     }
     
     //maxX
-    public var magi_maxX: CGFloat {
+    var magi_maxX: CGFloat {
         get {
             return self.frame.origin.x + self.frame.size.width
         }
     }
     
     //maxY
-    public var magi_maxY: CGFloat {
+    var magi_maxY: CGFloat {
         get {
             return self.frame.origin.y + self.frame.size.height
         }
     }
     
-    class func setAnimate(animations: @escaping (()->Void),
+    public class func setAnimate(animations: @escaping (()->Void),
                           completion: ((Bool)->Void)? = nil) {
         UIView.animate(withDuration: 0.15,
                        delay: 0,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum MagiReplicatorLayerAnimationStyle: Int {
+public enum MagiReplicatorLayerAnimationStyle: Int {
     case woody
     case allen
     case circle
@@ -17,7 +17,7 @@ enum MagiReplicatorLayerAnimationStyle: Int {
     case triangle
 }
 
-class MagiReplicatorLayer: CALayer {
+public class MagiReplicatorLayer: CALayer {
     
     struct RuntimeKey {
         static let leftDot = UnsafeRawPointer.init(
@@ -27,7 +27,7 @@ class MagiReplicatorLayer: CALayer {
             bitPattern: "RightDot".hashValue)
     }
     
-    var leftCircle: CAShapeLayer {
+    public var leftCircle: CAShapeLayer {
         set {
             objc_setAssociatedObject(
                 self,
@@ -56,7 +56,7 @@ class MagiReplicatorLayer: CALayer {
         }
     }
     
-    var rightCircle: CAShapeLayer {
+    public var rightCircle: CAShapeLayer {
         set {
             objc_setAssociatedObject(
                 self,
@@ -85,7 +85,7 @@ class MagiReplicatorLayer: CALayer {
         }
     }
     
-    lazy var replicatorLayer: CAReplicatorLayer = {
+    public lazy var replicatorLayer: CAReplicatorLayer = {
         let replicatorLayer = CAReplicatorLayer()
         replicatorLayer.backgroundColor = UIColor.clear.cgColor
         replicatorLayer.shouldRasterize = true
@@ -94,7 +94,7 @@ class MagiReplicatorLayer: CALayer {
         return replicatorLayer
     }()
     
-    lazy var indicatorShapeLayer: CAShapeLayer = {
+    public lazy var indicatorShapeLayer: CAShapeLayer = {
         let indicatorShapeLayer = CAShapeLayer()
         indicatorShapeLayer.contentsScale = UIScreen.main.scale
         indicatorShapeLayer.lineCap = CAShapeLayerLineCap.round
@@ -103,7 +103,7 @@ class MagiReplicatorLayer: CALayer {
     }()
         
     
-    var themeColor: UIColor = MagiRefreshDefaults.shared.themeColor {
+    public var themeColor: UIColor = MagiRefreshDefaults.shared.themeColor {
         didSet {
             indicatorShapeLayer.strokeColor = themeColor.cgColor
             indicatorShapeLayer.backgroundColor = themeColor.cgColor
@@ -111,7 +111,7 @@ class MagiReplicatorLayer: CALayer {
     }
 
     
-    var animationStyle: MagiReplicatorLayerAnimationStyle = .woody {
+    public var animationStyle: MagiReplicatorLayerAnimationStyle = .woody {
         didSet {
             setNeedsLayout()
         }
@@ -133,7 +133,7 @@ class MagiReplicatorLayer: CALayer {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSublayers() {
+    override public func layoutSublayers() {
         super.layoutSublayers()
         replicatorLayer.frame = bounds
         let padding: CGFloat = 10.0
@@ -295,7 +295,7 @@ extension MagiReplicatorLayer {
 
 extension MagiReplicatorLayer: MagiAnimatableProtocol {
     
-    func startAnimating() {
+    public func startAnimating() {
         indicatorShapeLayer.removeAllAnimations()
         switch animationStyle {
         case .woody:
@@ -375,7 +375,7 @@ extension MagiReplicatorLayer: MagiAnimatableProtocol {
         }
     }
     
-    func stopAnimating() {
+    public func stopAnimating() {
         indicatorShapeLayer.removeAllAnimations()
         switch animationStyle {
         case .woody:

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class MagiBasePlaceHolder: UIView {
+public class MagiBasePlaceHolder: UIView {
     
     public typealias MagiTapClosure = ()->()
     var tapBlankViewClosure: MagiTapClosure?

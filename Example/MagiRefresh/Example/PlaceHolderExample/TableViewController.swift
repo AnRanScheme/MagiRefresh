@@ -50,6 +50,7 @@ class TableViewController: UITableViewController {
         }
         //self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+
         tableView.magiRefresh.bindStyleForFooterRefresh(
             themeColor: UIColor.cyan,
             refreshStyle: MagiRefreshStyle.animatableArrow) { [weak self] in

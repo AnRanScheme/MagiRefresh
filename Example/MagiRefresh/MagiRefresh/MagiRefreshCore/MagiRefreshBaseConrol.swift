@@ -8,13 +8,13 @@
 
 import UIKit
 
-typealias MagiRefreshClosure = ()->()
+public typealias MagiRefreshClosure = ()->()
 let kMagiRefreshHeight: CGFloat = 45.0
 let kMagiStretchOffsetYAxisThreshold: CGFloat = 1
 let kMagiContentOffset = "contentOffset"
 let kMagiContentSize = "contentSize"
 
-class MagiRefreshBaseConrol: UIView {
+public class MagiRefreshBaseConrol: UIView {
     
     /// The UIScrollView to which the control is added, developers may not set
     fileprivate(set) var scrollView: UIScrollView?
@@ -28,9 +28,9 @@ class MagiRefreshBaseConrol: UIView {
         }
     }
     /// Judge whether the animation is executed when the refresh is over
-    var isAnimating: Bool = false
+    public var isAnimating: Bool = false
     /// Control refresh status, developers may not set
-    var refreshStatus: MagiRefreshStatus = .none {
+    public var refreshStatus: MagiRefreshStatus = .none {
         willSet {
             if refreshStatus == newValue { return }
             switch newValue {
@@ -69,13 +69,13 @@ class MagiRefreshBaseConrol: UIView {
     }
     /// When the system automatically or manually adjust contentInset,
     /// this value will be saved
-    var presetContentInsets: UIEdgeInsets = UIEdgeInsets.zero
+    public var presetContentInsets: UIEdgeInsets = UIEdgeInsets.zero
     /// This value is set to TRUE if the beginRefresh method is called automatically
     /// developers may not set
-    var isTriggeredRefreshByUser: Bool = false
+    public var isTriggeredRefreshByUser: Bool = false
     /// the current position offset of the control as a percentage
     /// of the offset that triggered the refresh
-    var progress: CGFloat = 0.0 {
+    public var progress: CGFloat = 0.0 {
         willSet {
             if progress == newValue { return }
             magiRefreshControlDidScrollWithProgress(progress: newValue,
@@ -83,10 +83,14 @@ class MagiRefreshBaseConrol: UIView {
         }
     }
     ///  Closure will be called when refreshing
-    var refreshClosure: MagiRefreshClosure?
+    public var refreshClosure: MagiRefreshClosure?
+    ///  selector will be called when refreshing aim target
+    public weak var target: AnyObject?
+    ///  selector will be called when refreshing
+    public var selector: Selector?
     /// The threshold for trigger refresh default 1.0 must be set to not less than 1.0,
     /// default value is 1.3, developers can set the value
-    var stretchOffsetYAxisThreshold: CGFloat = 1.3 {
+    public var stretchOffsetYAxisThreshold: CGFloat = 1.3 {
         willSet {
             if !(stretchOffsetYAxisThreshold != newValue && newValue > 1.0) {
                 return
@@ -94,16 +98,16 @@ class MagiRefreshBaseConrol: UIView {
         }
     }
     /// fill colors for points, lines, and faces that appear in this control.
-    var themeColor: UIColor = UIColor.blue {
+    public var themeColor: UIColor = UIColor.blue {
         didSet {
             alertLabel.textColor = themeColor
         }
     }
     /// The background color of the layer that executes the animation
-    var animatedBackgroundColor: UIColor = UIColor.white
+    public var animatedBackgroundColor: UIColor = UIColor.white
     /// if called method "endRefreshingAndNoLongerRefreshingWithAlertText:" to end refresh,
     /// shouldNoLongerRefresh will set TRUE.
-    var isShouldNoLongerRefresh: Bool = false
+    public var isShouldNoLongerRefresh: Bool = false
     
     /**
      scrollview trigger refresh automatically that don't need to scroll to bottom.
@@ -117,11 +121,11 @@ class MagiRefreshBaseConrol: UIView {
      tableView.magiRefresh.footer.endRefreshingWithAlertText("Did load successfully",completion:nil)
      }
      */
-    var isAutoRefreshOnFoot: Bool = true
+    public var isAutoRefreshOnFoot: Bool = true
     
     fileprivate var isObservering: Bool = false
     
-    lazy var alertLabel: MagiAlertLabel = {
+    public lazy var alertLabel: MagiAlertLabel = {
         let alertLabel = MagiAlertLabel()
         alertLabel.textAlignment = .center
         alertLabel.font =  UIFont(name: "Helvetica", size: 15)
@@ -141,7 +145,7 @@ class MagiRefreshBaseConrol: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         let height = magi_height < 45.0
             ? kMagiRefreshHeight
@@ -152,7 +156,7 @@ class MagiRefreshBaseConrol: UIView {
         alertLabel.frame = self.bounds
     }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override public func willMove(toSuperview newSuperview: UIView?) {
         // super.willMove(toSuperview: newSuperview)
         let options = NSKeyValueObservingOptions.new.union(NSKeyValueObservingOptions.old)
         if let superview = superview,
@@ -188,7 +192,7 @@ class MagiRefreshBaseConrol: UIView {
     }
     
     
-    override func observeValue(forKeyPath keyPath: String?,
+    override public func observeValue(forKeyPath keyPath: String?,
                       of object: Any?,
                       change: [NSKeyValueChangeKey : Any]?,
                       context: UnsafeMutableRawPointer?) {
@@ -215,11 +219,11 @@ class MagiRefreshBaseConrol: UIView {
     ///  Set the color of the prompt text after the refresh is completed.
     ///
     /// - Parameter alertTextColor: alertTextColor color
-    func setAlertTextColor(_ alertTextColor: UIColor) {
+    public func setAlertTextColor(_ alertTextColor: UIColor) {
         alertLabel.textColor = alertTextColor
     }
     // MARK: - (需要被子类重写) Subclasses override this method
-    func setupProperties() {
+    public func setupProperties() {
         backgroundColor = UIColor.clear
         alpha = 0.0
         addSubview(alertLabel)
@@ -233,21 +237,21 @@ class MagiRefreshBaseConrol: UIView {
         }
     }
     // MARK: - (需要被子类重写) Subclasses override this method
-    func privateContentOffsetOfScrollViewDidChange(_ contentOffset: CGPoint) {
+    public func privateContentOffsetOfScrollViewDidChange(_ contentOffset: CGPoint) {
         
     }
     // MARK: - (需要被子类重写) Subclasses override this method
-    func setScrollViewToRefreshLocation() {
+    public func setScrollViewToRefreshLocation() {
         isAnimating = true
     }
     // MARK: - (需要被子类重写) Subclasses override this method
-    func setScrollViewToOriginalLocation() {
+    public func setScrollViewToOriginalLocation() {
         
     }
     
     // MARK: - Public Function
     // MARK: - (需要被子类重写) Subclasses override this method
-    func beginRefreshing() {
+    public func beginRefreshing() {
         if refreshStatus != .none || isHidden || isTriggeredRefreshByUser {
             return
         }
@@ -259,7 +263,7 @@ class MagiRefreshBaseConrol: UIView {
         setScrollViewToRefreshLocation()
     }
     // MARK: - (需要被子类重写) Subclasses override this method
-    func endRefreshing() {
+    public func endRefreshing() {
         endRefreshingWithAlertText("", completion: nil)
     }
     // MARK: - (需要被子类重写) Subclasses override this method
@@ -270,7 +274,7 @@ class MagiRefreshBaseConrol: UIView {
     /// - Parameters:
     ///   - text: text default is "", and no animation.
     ///   - completion: completion when text is hidden, this block will be called.
-    func endRefreshingWithAlertText(_ text: String = "", completion: (()->())?) {
+    public func endRefreshingWithAlertText(_ text: String = "", completion: (()->())?) {
         if (!isRefresh && !isAnimating) || isHidden {
             return
         }
@@ -297,7 +301,7 @@ class MagiRefreshBaseConrol: UIView {
     /// is meaningless and refreshing will be disabled.
     ///
     /// - Parameter text: text If the user continues to drag, it will display the “text”, and will not trigger refresh.
-    func endRefreshingAndNoLongerRefreshingWithAlertText(_ text: String) {
+    public func endRefreshingAndNoLongerRefreshingWithAlertText(_ text: String) {
         if (!isRefresh && !isAnimating) || isHidden {
             return
         }
@@ -325,7 +329,7 @@ class MagiRefreshBaseConrol: UIView {
     
     /// After you call ‘endRefreshingAndNoLongerRefreshingWithAlertText’,
     /// you need to resume refresh available
-    func resumeRefreshAvailable() {
+    public func resumeRefreshAvailable() {
         isShouldNoLongerRefresh = false
         alertLabel.alpha = 0.0
     }
@@ -336,12 +340,17 @@ class MagiRefreshBaseConrol: UIView {
         setScrollViewToOriginalLocation()
     }
     
-    func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
+    public func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
         
     }
     
-    func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
+    public func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
         
+    }
+    
+    public func magiRefreshingTarget(_ target: AnyObject, action: Selector) {
+        self.target = target
+        self.selector = action
     }
 
   
@@ -350,11 +359,11 @@ class MagiRefreshBaseConrol: UIView {
 // MARK: - MagiRefreshControlProtocol
 extension MagiRefreshBaseConrol: MagiRefreshControlProtocol {
     
-    func magiRefreshControlStateDidChange(_ status: MagiRefreshStatus) {
+    public func magiRefreshControlStateDidChange(_ status: MagiRefreshStatus) {
         magiRefreshStateDidChange(status)
     }
     
-    func magiRefreshControlDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
+    public func magiRefreshControlDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
         magiDidScrollWithProgress(progress: progress, max: max)
     }
     

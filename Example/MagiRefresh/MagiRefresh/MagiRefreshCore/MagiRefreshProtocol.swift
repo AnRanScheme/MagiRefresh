@@ -6,21 +6,10 @@
 //  Copyright © 2018年 anran. All rights reserved.
 //
 
-
-/**
- #ifndef Kafka_REQUIRES_SUPER
- # if __has_attribute(objc_requires_super)
- #  define Kafka_REQUIRES_SUPER __attribute__((objc_requires_super))
- # else
- #  define Kafka_REQUIRES_SUPER
- # endif
- #endif
- */
-
 import Foundation
 import UIKit
 
-enum MagiRefreshStatus: Int {
+public enum MagiRefreshStatus: Int {
     case none
     case scrolling
     case ready
@@ -29,7 +18,7 @@ enum MagiRefreshStatus: Int {
 }
 
 /// 类专属协议 使用的时候 要用weak修饰
-protocol MagiRefreshControlProtocol: class {
+public protocol MagiRefreshControlProtocol: class {
     
     /// when the state of the refresh control changes, the method is called
     ///

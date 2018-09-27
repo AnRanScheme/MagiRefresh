@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MagiRingIndicatorFooter: MagiRefreshFooterConrol {
+public class MagiRingIndicatorFooter: MagiRefreshFooterConrol {
 
     fileprivate lazy var indicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(
@@ -24,13 +24,13 @@ class MagiRingIndicatorFooter: MagiRefreshFooterConrol {
         return arcLayer
     }()
     
-    override func setupProperties() {
+    override public func setupProperties() {
         super.setupProperties()
         layer.addSublayer(arcLayer)
         addSubview(indicator)
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         arcLayer.frame = CGRect(x: 0,
                                 y: 0,
@@ -40,7 +40,7 @@ class MagiRingIndicatorFooter: MagiRefreshFooterConrol {
                                    y: magi_height/2.0)
     }
     
-    override func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
+    override public func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
         var progress1 = progress
         if (progress1 >= 0.3) {
             progress1 = (progress1-0.3)/(max - 0.3)
@@ -48,7 +48,7 @@ class MagiRingIndicatorFooter: MagiRefreshFooterConrol {
         arcLayer.setProgress(progress1)
     }
     
-    override func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
+    override public func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
         super.magiRefreshStateDidChange(status)
         switch status {
         case .none:
