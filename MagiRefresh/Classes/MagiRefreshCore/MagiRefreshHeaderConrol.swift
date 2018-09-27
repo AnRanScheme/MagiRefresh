@@ -82,7 +82,7 @@ class MagiRefreshHeaderConrol: MagiRefreshBaseConrol {
             presetContentInsets = scrollView?.realContentInset ?? UIEdgeInsets.zero
             
             if refreshStatus == .scrolling {
-                let progress: CGFloat = (fabs(originY) - presetContentInsets.top)/magi_height
+                let progress: CGFloat = (abs(originY) - presetContentInsets.top)/magi_height
                 if progress <= stretchOffsetYAxisThreshold {
                     self.progress = progress
                 }

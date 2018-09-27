@@ -67,7 +67,7 @@ class MagiRefreshFooterConrol: MagiRefreshBaseConrol {
                 originY = contentOffset.y+presetContentInsets.top
                 
                 if refreshStatus == .scrolling {
-                    let progress = fabs(originY) / magi_height
+                    let progress = abs(originY) / magi_height
                     if progress <= stretchOffsetYAxisThreshold {
                         self.progress = progress
                     }
@@ -84,7 +84,7 @@ class MagiRefreshFooterConrol: MagiRefreshBaseConrol {
                 if originY < minY - uncontinuousOpt {return}
                 
                 if refreshStatus == .scrolling {
-                    let progress = fabs((originY - contentOffsetYInBottom - presetContentInsets.bottom))/magi_height
+                    let progress = abs((originY - contentOffsetYInBottom - presetContentInsets.bottom))/magi_height
                     if progress <= stretchOffsetYAxisThreshold {
                         self.progress = progress
                     }
