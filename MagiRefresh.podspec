@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.name             = 'MagiRefresh'
   s.version          = '0.0.1'
   s.summary          = 'Animated, customizable, and flexible pull-to-refresh framework for faster and easier iOS development. '
-  s.swift_version    = '3.2'
+  s.swift_version    = '4.2'
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
