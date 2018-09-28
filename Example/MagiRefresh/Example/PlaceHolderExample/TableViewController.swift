@@ -66,13 +66,15 @@ class TableViewController: UITableViewController {
             print("bindStyleForHeaderRefresh")
         }
         tableView.magiRefresh.header = header
-//        tableView.magiRefresh.bindStyleForHeaderRefresh(
-//            themeColor: UIColor.cyan,
-//            refreshStyle: MagiRefreshStyle.animatableArrow) { [weak self] in
-//                 self?.tableView.magiRefresh.header?.endRefreshing()
-//                self?.tableView.reloadData()
-//                print("bindStyleForHeaderRefresh")
-//        }
+        /*
+        tableView.magiRefresh.bindStyleForHeaderRefresh(
+            themeColor: UIColor.cyan,
+            refreshStyle: MagiRefreshStyle.animatableArrow) { [weak self] in
+                 self?.tableView.magiRefresh.header?.endRefreshing()
+                self?.tableView.reloadData()
+                print("bindStyleForHeaderRefresh")
+        }
+        */
         setupCustomPlaceHolderView()
     }
     
