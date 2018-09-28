@@ -28,11 +28,13 @@ class ViewController: UIViewController {
                            forCellReuseIdentifier: ViewController.identifier)
         
         let header = MagiReplicatorHeader()
+        header.themeColor = UIColor.red
+        
         tableView.magiRefresh.header = header
         header.magiRefreshingClosure({
             print("刷新")
             Delay(3, completion: {
-                tableView.magiRefresh.header?.endRefreshing()
+                tableView.magiRefresh.header?.endRefreshingWithAlertText("哈哈哈哈哈", completion: nil)
             })
         })
         let footer = MagiArrowFooter()
