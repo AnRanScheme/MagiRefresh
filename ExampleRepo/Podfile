@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'MagiRefresh_Example' do
-  pod 'MagiRefresh',      '~> 0.0.2'
+  pod 'MagiRefresh',      '~> 0.0.3'
 
   target 'MagiRefresh_Tests' do
     inherit! :search_paths
