@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MagiAlertLabel: UILabel, CAAnimationDelegate {
+public class MagiAlertLabel: UILabel, CAAnimationDelegate {
     
     // MARK: - 控件
     fileprivate lazy var new: CAGradientLayer = {
@@ -29,7 +29,7 @@ class MagiAlertLabel: UILabel, CAAnimationDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         new.frame = CGRect(x: 0, y: 0, width: 0, height: magi_height)
         new.position = CGPoint(x: magi_width/2.0, y: magi_height/2.0)
@@ -41,7 +41,7 @@ class MagiAlertLabel: UILabel, CAAnimationDelegate {
         layer.addSublayer(new)
     }
     
-    func startAnimating() {
+    public func startAnimating() {
         UIView.animate(withDuration: 0.3) {
             self.alpha = 1
         }
@@ -62,7 +62,7 @@ class MagiAlertLabel: UILabel, CAAnimationDelegate {
                 forKey: animation.keyPath)
     }
     
-    func stopAnimating() {
+    public func stopAnimating() {
         UIView.animate(withDuration: 0.3) {
             self.alpha = 0.0
         }

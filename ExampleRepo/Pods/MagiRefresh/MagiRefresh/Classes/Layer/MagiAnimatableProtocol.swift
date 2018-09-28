@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MagiAnimatableProtocol {
+public protocol MagiAnimatableProtocol {
     
     func startAnimating()
     

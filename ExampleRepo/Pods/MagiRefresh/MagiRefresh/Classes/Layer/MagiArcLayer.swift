@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MagiArcLayer: CALayer {
+ public class MagiArcLayer: CALayer {
     
     fileprivate lazy var ringBackgroundLayer: CAShapeLayer = {
         let ringBackgroundLayer = CAShapeLayer()
@@ -61,7 +61,7 @@ class MagiArcLayer: CALayer {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSublayers() {
+    override public func layoutSublayers() {
         super.layoutSublayers()
         
         ringBackgroundLayer.bounds = CGRect(x: 0,
@@ -94,11 +94,11 @@ extension MagiArcLayer {
 
 extension MagiArcLayer: MagiAnimatableProtocol {
     
-    func startAnimating() {
+    public func startAnimating() {
         
     }
     
-    func stopAnimating() {
+    public func stopAnimating() {
         ringShapeLayer.strokeEnd = 0.0
         ringShapeLayer.removeAllAnimations()
     }

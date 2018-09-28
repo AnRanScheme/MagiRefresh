@@ -27,7 +27,7 @@ let kBlackColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1)
 // 灰色
 let kGrayColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
 
-class MagiPlaceHolder: MagiBasePlaceHolder {
+public class MagiPlaceHolder: MagiBasePlaceHolder {
 
     // MARK: - 控件
     /// 图片

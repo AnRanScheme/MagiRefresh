@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MagiArrowHeader: MagiRefreshHeaderConrol {
+public class MagiArrowHeader: MagiRefreshHeaderConrol {
     
-    var pullingText: String = MagiRefreshDefaults.shared.headPullingText
-    var readyText: String = MagiRefreshDefaults.shared.readyText
-    var refreshingText: String = MagiRefreshDefaults.shared.refreshingText
+    public var pullingText: String = MagiRefreshDefaults.shared.headPullingText
+    public var readyText: String = MagiRefreshDefaults.shared.readyText
+    public var refreshingText: String = MagiRefreshDefaults.shared.refreshingText
     
     fileprivate lazy var arrowImgV: UIImageView = {
         let arrowImgV = UIImageView()
@@ -50,14 +50,14 @@ class MagiArrowHeader: MagiRefreshHeaderConrol {
         return indicator
     }()
     
-    override func setupProperties() {
+    override public func setupProperties() {
         super.setupProperties()
         addSubview(arrowImgV)
         addSubview(promptlabel)
         addSubview(indicator)
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         promptlabel.sizeToFit()
         promptlabel.center = CGPoint(x: magi_width/2, y: magi_height/2)
@@ -67,11 +67,11 @@ class MagiArrowHeader: MagiRefreshHeaderConrol {
         indicator.center = arrowImgV.center
     }
     
-    override func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
+    override public func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
         super.magiDidScrollWithProgress(progress: progress, max: max)
     }
     
-    override func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
+    override public func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
         super.magiRefreshStateDidChange(status)
         switch status {
         case .none:

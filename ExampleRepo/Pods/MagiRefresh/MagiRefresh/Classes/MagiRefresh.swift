@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MagiRefresh {
+public class MagiRefresh {
     
     static let MagiHeaderKeyPath = "MagiHeaderKeyPath"
     static let MagiFooterKeyPath = "MagiHeaderKeyPath"
     
-    var placeHolder: MagiPlaceHolder? {
+    public var placeHolder: MagiPlaceHolder? {
         didSet {
             guard let scrollView = self.scrollView else { return }
             for view in scrollView.subviews {
@@ -28,7 +28,7 @@ class MagiRefresh {
         }
     }
     
-    var header: MagiRefreshHeaderConrol? {
+    public var header: MagiRefreshHeaderConrol? {
         willSet{
             if header != newValue {
                 guard let scrollView = self.scrollView else { return }
@@ -44,7 +44,7 @@ class MagiRefresh {
         }
     }
     
-    var footer: MagiRefreshFooterConrol? {
+    public var footer: MagiRefreshFooterConrol? {
         willSet{
             if footer != newValue {
                 guard let scrollView = self.scrollView else { return }

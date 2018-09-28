@@ -12,7 +12,7 @@ import UIKit
 // MARK: - MagiRefresh+Configuration
 extension MagiRefresh {
     
-    func bindStyleForHeaderRefresh(themeColor: UIColor = MagiRefreshDefaults.shared.themeColor,
+    public func bindStyleForHeaderRefresh(themeColor: UIColor = MagiRefreshDefaults.shared.themeColor,
                                    refreshStyle: MagiRefreshStyle = MagiRefreshDefaults.shared.headerDefaultStyle,
                                    completion: @escaping MagiRefreshClosure) {
         var header: MagiRefreshHeaderConrol?
@@ -48,7 +48,7 @@ extension MagiRefresh {
         
     }
     
-    func bindStyleForFooterRefresh(themeColor: UIColor = MagiRefreshDefaults.shared.themeColor,
+    public func bindStyleForFooterRefresh(themeColor: UIColor = MagiRefreshDefaults.shared.themeColor,
                                    refreshStyle: MagiRefreshStyle = MagiRefreshDefaults.shared.footerDefaultStyle,
                                    completion: @escaping MagiRefreshClosure) {
 

@@ -11,7 +11,7 @@ import UIKit
 extension CALayer {
 
     //frame.origin.x
-    public var magi_left: CGFloat {
+    var magi_left: CGFloat {
         get {
             return self.frame.origin.x
         }
@@ -23,7 +23,7 @@ extension CALayer {
     }
 
     //frame.origin.y
-    public var magi_top: CGFloat {
+    var magi_top: CGFloat {
         get {
             return self.frame.origin.y
         }
@@ -35,7 +35,7 @@ extension CALayer {
     }
 
     //frame.origin.x + frame.size.width
-    public var magi_right: CGFloat {
+    var magi_right: CGFloat {
         get {
             return self.frame.origin.x + self.frame.size.width
         }
@@ -47,7 +47,7 @@ extension CALayer {
     }
 
     //frame.origin.y + frame.size.height
-    public var magi_bottom: CGFloat {
+    var magi_bottom: CGFloat {
         get {
             return self.frame.origin.y + self.frame.size.height
         }
@@ -59,7 +59,7 @@ extension CALayer {
     }
 
     //frame.size.width
-    public var magi_width: CGFloat {
+    var magi_width: CGFloat {
         get {
             return self.frame.size.width
         }
@@ -71,7 +71,7 @@ extension CALayer {
     }
 
     //frame.size.height
-    public var magi_height: CGFloat {
+    var magi_height: CGFloat {
         get {
             return self.frame.size.height
         }
@@ -83,7 +83,7 @@ extension CALayer {
     }
 
     //center.x
-    public var magi_positionX: CGFloat {
+    var magi_positionX: CGFloat {
         get {
             return self.position.x
         }
@@ -93,7 +93,7 @@ extension CALayer {
     }
 
     //center.y
-    public var magi_positionY: CGFloat {
+    var magi_positionY: CGFloat {
         get {
             return self.position.y
         }
@@ -103,7 +103,7 @@ extension CALayer {
     }
 
     //frame.origin
-    public var magi_origin: CGPoint {
+    var magi_origin: CGPoint {
         get {
             return self.frame.origin
         }
@@ -115,7 +115,7 @@ extension CALayer {
     }
 
     //frame.size
-    public var magi_size: CGSize {
+    var magi_size: CGSize {
         get {
             return self.frame.size
         }
@@ -127,14 +127,14 @@ extension CALayer {
     }
 
     //maxX
-    public var magi_maxX: CGFloat {
+    var magi_maxX: CGFloat {
         get {
             return self.frame.origin.x + self.frame.size.width
         }
     }
 
     //maxY
-    public var magi_maxY: CGFloat {
+    var magi_maxY: CGFloat {
         get {
             return self.frame.origin.y + self.frame.size.height
         }
