@@ -179,7 +179,6 @@ extension MagiRefreshFooterConrol {
                                       max: stretchOffsetYAxisThreshold)
         }
         refreshClosure?()
-        self.perform(selector, with: target)
     }
 
     

@@ -169,7 +169,6 @@ extension MagiRefreshHeaderConrol {
                                       max: stretchOffsetYAxisThreshold)
         }
         refreshClosure?()
-        self.perform(selector, with: target)
     }
  
 }

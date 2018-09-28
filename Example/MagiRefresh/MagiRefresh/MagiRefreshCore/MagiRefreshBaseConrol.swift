@@ -352,7 +352,10 @@ public class MagiRefreshBaseConrol: UIView {
         self.target = target
         self.selector = action
     }
-
+    
+    public func magiRefreshingClosure(_ completion: @escaping MagiRefreshClosure) {
+        self.refreshClosure = completion
+    }
   
 }
 
