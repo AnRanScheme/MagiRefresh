@@ -1,16 +1,16 @@
 PODS:
-  - MagiRefresh (0.0.5)
+  - MagiRefresh (0.0.6)
 
 DEPENDENCIES:
-  - MagiRefresh (~> 0.0.5)
+  - MagiRefresh (~> 0.0.6)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - MagiRefresh
 
 SPEC CHECKSUMS:
-  MagiRefresh: 10d21460c393724200a2063722499d103904efba
+  MagiRefresh: 54505ba0af812d0ce7960af19ed6fceeea397cc7
 
-PODFILE CHECKSUM: 7cd800e365e226e3c1369431a460dba435572790
+PODFILE CHECKSUM: 1f4e5d41b9bf9c1f92ec33a62aa6a980a55eb199
 
 COCOAPODS: 1.5.3

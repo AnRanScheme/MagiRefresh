@@ -18,7 +18,8 @@ public class MagiArrowFooter: MagiRefreshFooterConrol {
     
     fileprivate lazy var arrowImgV: UIImageView = {
         let arrowImgV = UIImageView()
-        let path = Bundle.main.path(forResource: "Image", ofType: "bundle", inDirectory: nil) ?? ""
+        let bundle = Bundle(for: MagiArrowFooter.classForCoder())
+        let path = bundle.path(forResource: "Image", ofType: "bundle", inDirectory: nil) ?? ""
         let urlString = (path as NSString).appendingPathComponent("arrow.png")
         let image = UIImage(contentsOfFile: urlString)
         arrowImgV.image = image
