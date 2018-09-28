@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MagiRefresh'
-  s.version          = '0.0.3'
+  s.version          = '0.0.1'
   s.summary          = 'Animated, customizable, and flexible pull-to-refresh framework for faster and easier iOS development. '
   s.swift_version    = '4.2'
 # This description is used to generate tags and improve search results.
