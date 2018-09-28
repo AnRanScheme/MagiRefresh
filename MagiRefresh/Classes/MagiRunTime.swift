@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ObjectiveC
 
 struct MagiRunTime {
     
@@ -93,5 +94,5 @@ struct MagiRunTime {
         free(ivars)
         return list
     }
-
+    
 }

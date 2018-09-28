@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.bounds,
                                     style: UITableViewStyle.plain)
-        
+        tableView.magi_maxX
         return tableView
     }()
 

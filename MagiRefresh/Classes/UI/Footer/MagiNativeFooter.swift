@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MagiNativeFooter: MagiRefreshFooterConrol {
+public class MagiNativeFooter: MagiRefreshFooterConrol {
     
     lazy var indicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(
@@ -18,23 +18,23 @@ class MagiNativeFooter: MagiRefreshFooterConrol {
         return indicator
     }()
     
-    override func setupProperties() {
+    override public func setupProperties() {
         super.setupProperties()
         
         addSubview(indicator)
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         indicator.center = CGPoint(x: magi_width/2.0,
                                    y: magi_height/2.0);
     }
     
-    override func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
+    override public func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
         
     }
     
-    override func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
+    override public func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
         super.magiRefreshStateDidChange(status)
         switch status {
         case .none:

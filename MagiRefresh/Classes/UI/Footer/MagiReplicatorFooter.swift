@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MagiReplicatorFooter: MagiRefreshFooterConrol {
+public class MagiReplicatorFooter: MagiRefreshFooterConrol {
 
     fileprivate lazy var replicatorLayer: MagiReplicatorLayer = {
         let replicatorLayer = MagiReplicatorLayer()
@@ -16,24 +16,24 @@ class MagiReplicatorFooter: MagiRefreshFooterConrol {
         return replicatorLayer
     }()
     
-    var animationStyle: MagiReplicatorLayerAnimationStyle = .woody {
+    public var animationStyle: MagiReplicatorLayerAnimationStyle = .woody {
         didSet{
             replicatorLayer.animationStyle = animationStyle
         }
     }
     
-    override var themeColor: UIColor {
+    override public var themeColor: UIColor {
         didSet{
             replicatorLayer.themeColor = themeColor
         }
     }
     
-    override func setupProperties() {
+    override public func setupProperties() {
         super.setupProperties()
         layer.addSublayer(replicatorLayer)
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         replicatorLayer.frame = CGRect(x: 0,
                                        y: 0,
@@ -41,7 +41,7 @@ class MagiReplicatorFooter: MagiRefreshFooterConrol {
                                        height: magi_height)
     }
     
-    override func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
+    override public func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
         switch animationStyle {
         case .woody:
             break
@@ -62,7 +62,7 @@ class MagiReplicatorFooter: MagiRefreshFooterConrol {
         }
     }
     
-    override func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
+    override public func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
         super.magiRefreshStateDidChange(status)
         switch status {
         case .none:

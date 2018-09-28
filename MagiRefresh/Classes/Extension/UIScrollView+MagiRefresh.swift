@@ -16,7 +16,7 @@ extension UIScrollView {
             bitPattern: "magiRefresh".hashValue)
     }
     
-    var magiRefresh: MagiRefresh {
+    public var magiRefresh: MagiRefresh {
         set {
             objc_setAssociatedObject(
                 self,
@@ -54,7 +54,7 @@ extension UIScrollView {
 
 extension UIScrollView {
 
-    public var offsetX: CGFloat {
+    var offsetX: CGFloat {
         get {
             return self.contentOffset.x
         }
@@ -65,7 +65,7 @@ extension UIScrollView {
         }
     }
 
-    public var offsetY: CGFloat {
+    var offsetY: CGFloat {
         get {
             return self.contentOffset.y
         }
@@ -76,7 +76,7 @@ extension UIScrollView {
         }
     }
 
-    public var insetTop: CGFloat {
+    var insetTop: CGFloat {
         get {
             return self.realContentInset.top
         }
@@ -90,7 +90,7 @@ extension UIScrollView {
         }
     }
 
-    public var insetBottom: CGFloat {
+    var insetBottom: CGFloat {
         get {
             return self.realContentInset.bottom
         }
@@ -104,11 +104,11 @@ extension UIScrollView {
         }
     }
 
-    public var contentHeight: CGFloat {
+    var contentHeight: CGFloat {
         return self.contentSize.height
     }
 
-    public var realContentInset: UIEdgeInsets {
+    var realContentInset: UIEdgeInsets {
         if #available(iOS 11.0, *){
             return self.adjustedContentInset
         } else {
