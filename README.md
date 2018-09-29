@@ -5,10 +5,11 @@
 
   <h3 align="center">MagiRefresh</h3> 
   <p align="center">
-     内置多种动画、可自定义和灵活的iOS下拉刷新框架(Swift实现)
+     当tabelView和collectionView的数据源为0的时候可以显示数据为空的替代页面,
+	并且内置多种动画、可自定义和灵活的iOS下拉刷新框架(Swift实现)
     <br> 
     <br>
-    <a href="https://github.com/AnRanScheme/MagiRefresh/issues/new?template=bug_cn.md">Bug提交</a>
+    <a href="https://github.com/AnRanScheme/MagiRefresh/issues/new?template=bug_en.md">Bug提交</a>
     ·
     <a href="https://github.com/AnRanScheme/MagiRefresh/issues/new">需求提交</a>  
   </p>
@@ -24,7 +25,24 @@
 [![Email](https://img.shields.io/badge/e--mail-andyscheme%40gmail.com-blue.svg)](mailto:andyscheme@gmail.com)
 ****
 
-### Screenshots
+### PlaceHolder Screenshots
+
+<table>
+<tr height="60px" align="center">
+  <td width="20%"><strong>数据为空的样式</strong></td>
+  <td width="40%"><strong>tableView</strong></td>
+  <td width="40%"><strong>collectionView</strong></td>
+  <td width="40%"><strong>webView</strong></td>
+</tr>
+<tr align="center" height="120px">
+  <td width="300px">native</td>
+  <td><img src="Assets/Gif/tableView.gif"></img></td>
+  <td><img src="Assets/Gif/collectionView.gif"></img></td>
+  <td><img src="Assets/Gif/webView.gif"></img></td>
+</tr>
+</table> 
+
+### Refresh Screenshots
 <table>
 <tr height="60px" align="center">
   <td width="20%"><strong>MagiRefreshStyle</strong></td>
@@ -130,6 +148,12 @@
     ```
 
 * 文档覆盖率100%、支持横竖屏切换自适应、iOS 7+。
+
+### 安装
+* CocoaPods
+```ruby
+pod 'MagiRefresh'
+```
 
 ### 使用
 
@@ -250,4 +274,4 @@ func endRefreshingAndNoLongerRefreshingWithAlertText(_ text: String)
  ```
  
  ### 小记
- 这个框架呢,是我最近在写一个新的项目Swift,因为是新的所以说有的东西动用比较新的技术,但是我看到了MJRefresh这个OC框架不能忍,我看了挺多的Swift的下拉刷新框架都觉得不是很好,但是不久之前看到了一个OC的框架KafkaRefresh,我决定修改一下架构然后重写了一个Swift板的,当然架构还是有所不同的但是样式是一样的
+ 这个框架呢,是我最近在写一个新的项目Swift,因为是新的所以说有的东西动用比较新的技术,但是我看到了MJRefresh这个OC框架不能忍,我看了挺多的Swift的下拉刷新框架都觉得不是很好,但是不久之前看到了一个OC的框架![KafkaRefresh](https://github.com/AnRanScheme/KafkaRefresh),我决定修改一下架构然后重写了一个Swift板的,当然架构还是有所不同的但是样式是一样的
