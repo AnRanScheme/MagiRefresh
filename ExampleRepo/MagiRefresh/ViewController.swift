@@ -29,7 +29,6 @@ class ViewController: UIViewController {
      
         let header = MagiReplicatorHeader()
         header.themeColor = UIColor.red
-        
         tableView.magiRefresh.header = header
         header.magiRefreshingClosure({
             print("刷新")
