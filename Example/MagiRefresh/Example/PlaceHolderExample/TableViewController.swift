@@ -80,7 +80,8 @@ class TableViewController: UITableViewController {
     //自定义空数据界面显示
     fileprivate func setupCustomPlaceHolderView() {
         let emptyView = Bundle.main.loadNibNamed(
-            "MyEmptyView", owner: self, options: nil)?.last as! MyEmptyView
+            "MyEmptyView", owner: self, options: nil)?.last
+            as! MyEmptyView
         emptyView.reloadBtn.addTarget(
             self,
             action: #selector(reloadBtnAction(_:)),

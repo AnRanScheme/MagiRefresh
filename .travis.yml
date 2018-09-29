@@ -5,7 +5,7 @@
 osx_image: xcode10.0
 language: objective-c
 cache: cocoapods
-podfile: Podfile
+podfile: ExampleRepo/Podfile
 before_install:
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
   - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
