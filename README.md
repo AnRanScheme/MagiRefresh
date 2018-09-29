@@ -17,7 +17,7 @@
 
 ### Status
 [![GitHub license](https://img.shields.io/github/license/xorshine/KafkaRefresh.svg)](https://github.com/AnRanScheme/MagiRefresh/blob/master/LICENSE)
-
+![CocoaPods Compatible](https://img.shields.io/cocoapods/v/MagiRefresh.svg?style=flat)
 
 ****
 
