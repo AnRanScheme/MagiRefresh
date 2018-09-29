@@ -8,7 +8,7 @@
      内置多种动画、可自定义和灵活的iOS下拉刷新框架(Swift实现)
     <br> 
     <br>
-    <a href="https://github.com/AnRanScheme/MagiRefresh/issues/new?template=issue_template.md">Bug提交</a>
+    <a href="https://github.com/AnRanScheme/MagiRefresh/issues/new?template=bug_en.md">Bug提交</a>
     ·
     <a href="https://github.com/AnRanScheme/MagiRefresh/issues/new">需求提交</a>  
   </p>
@@ -130,6 +130,12 @@
     ```
 
 * 文档覆盖率100%、支持横竖屏切换自适应、iOS 7+。
+
+### 安装
+* CocoaPods
+```ruby
+pod 'MagiRefresh'
+```
 
 ### 使用
 
