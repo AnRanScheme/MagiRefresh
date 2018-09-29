@@ -5,7 +5,8 @@
 
   <h3 align="center">MagiRefresh</h3> 
   <p align="center">
-     内置多种动画、可自定义和灵活的iOS下拉刷新框架(Swift实现)
+     当tabelView和collectionView的数据源为0的时候可以显示数据为空的替代页面,
+	并且内置多种动画、可自定义和灵活的iOS下拉刷新框架(Swift实现)
     <br> 
     <br>
     <a href="https://github.com/AnRanScheme/MagiRefresh/issues/new?template=bug_en.md">Bug提交</a>
@@ -24,7 +25,24 @@
 [![Email](https://img.shields.io/badge/e--mail-andyscheme%40gmail.com-blue.svg)](mailto:andyscheme@gmail.com)
 ****
 
-### Screenshots
+### PlaceHolder Screenshots
+
+<table>
+<tr height="60px" align="center">
+  <td width="20%"><strong>数据为空的样式</strong></td>
+  <td width="40%"><strong>tableView</strong></td>
+  <td width="40%"><strong>collectionView</strong></td>
+  <td width="40%"><strong>webView</strong></td>
+</tr>
+<tr align="center" height="120px">
+  <td width="300px">native</td>
+  <td><img src="Assets/Gif/tableView.gif"></img></td>
+  <td><img src="Assets/Gif/collectionView.gif"></img></td>
+  <td><img src="Assets/Gif/webView.gif"></img></td>
+</tr>
+</table> 
+
+### Refresh Screenshots
 <table>
 <tr height="60px" align="center">
   <td width="20%"><strong>MagiRefreshStyle</strong></td>
