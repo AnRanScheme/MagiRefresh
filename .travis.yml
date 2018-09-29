@@ -5,10 +5,17 @@
 osx_image: xcode10.0
 language: objective-c
 cache: cocoapods
-# podfile: Example/Podfile
+podfile: Podfile
 before_install:
+  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+  - pod update
+  - pod install
+# before_install:
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=ExampleRepo
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace ExampleRepo/MagiRefresh.xcworkspace -scheme MagiRefresh-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
+after_success:
+  - sleep 3
