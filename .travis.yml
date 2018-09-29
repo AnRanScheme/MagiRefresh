@@ -2,7 +2,7 @@
 # * https://www.objc.io/issues/6-build-tools/travis-ci/
 # * https://github.com/supermarin/xcpretty#usage
 
-osx_image: xcode10.0
+osx_image: xcode10
 language: objective-c
 cache: cocoapods
 podfile: ExampleRepo/Podfile
@@ -26,6 +26,6 @@ before_install:
 # - pod install --project-directory=ExampleRepo
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace ExampleRepo/MagiRefresh.xcworkspace -scheme MagiRefresh-Example -sdk iphonesimulator12.0 ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint --no-clean
+- pod lib lint --project-directory
 after_success:
   - sleep 3
