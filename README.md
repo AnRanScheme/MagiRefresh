@@ -29,18 +29,66 @@
 
 <table>
 <tr height="60px" align="center">
-  <td width="20%"><strong>数据为空的样式</strong></td>
-  <td width="40%"><strong>tableView</strong></td>
-  <td width="40%"><strong>collectionView</strong></td>
-  <td width="40%"><strong>webView</strong></td>
+  <td width="10%"><strong>数据为空的样式</strong></td>
+  <td width="30%"><strong>tableView</strong></td>
+  <td width="30%"><strong>collectionView</strong></td>
+  <td width="30%"><strong>webView</strong></td>
 </tr>
 <tr align="center" height="120px">
-  <td width="300px">native</td>
+  <td width="300px"></td>
   <td><img src="Assets/Gif/tableView.gif"></img></td>
   <td><img src="Assets/Gif/collectionView.gif"></img></td>
   <td><img src="Assets/Gif/webView.gif"></img></td>
 </tr>
 </table> 
+
+### PlaceHolder 特点
+
+可以定义数据为空的样式因为每个项目的需求不一样所以我就添加了一个customView 只要将自定义的view付给他就好
+还有一个我提供的样式可以设置图片
+
+这只是一个简单而实用的附带功能他只能使用在以上的3个控件上
+
+### PlaceHolder 使用方法
+
+##### 初始化控件
+1. MagiRefresh提供的方法
+   ```Swift
+   // 空数据界面显示
+   let placeHolder = MagiPlaceHolder.createPlaceHolderWithClosure(
+                imageName: "search_noData",
+                title: "暂无数据",
+                detailTitle: "",
+                refreshBtnTitle: "") {
+                    print("点击刷新按钮")
+            }
+            placeHolder.contentViewOffset = -100
+            placeHolder.titleLabFont = UIFont.systemFont(ofSize: 18)
+            placeHolder.titleLabTextColor = UIColor.purple
+            tableView.magiRefresh.placeHolder = placeHolder
+            tableView.magiRefresh.placeHolder?.tapBlankViewClosure = {
+                print("点击界面空白区域")
+   }       
+   tableView.magiRefresh.showPlaceHolder()
+   ```
+2. MagiRefresh提供的自定义方法
+   ```Swift
+   let emptyView = Bundle.main.loadNibNamed(
+       "MyEmptyView", owner: self, options: nil)?.last
+       as! MyEmptyView
+   emptyView.reloadBtn.addTarget(
+            self,
+            action: #selector(reloadBtnAction(_:)),
+            for: .touchUpInside)
+   emptyView.frame = view.bounds
+   //空数据界面显示
+   let placeHolder = MagiPlaceHolder.createCustomPlaceHolder(emptyView)
+   tableView.magiRefresh.placeHolder = placeHolder
+   tableView.magiRefresh.placeHolder?.tapBlankViewClosure = {
+            print("点击界面空白区域")
+   }
+   tableView.magiRefresh.showPlaceHolder()
+   ```
 
 ### Refresh Screenshots
 <table>
@@ -161,15 +209,13 @@ pod 'MagiRefresh'
 * 方式一
 ```Swift
 // MARK: - head
-
 tableView.magiRefresh.bindStyleForHeaderRefresh(themeColor: UIColor.red,
                                                          refreshStyle: MagiRefreshStyle.animatableArrow,
                                                          completion: {
                                                             print("加载完成处理逻辑")
-         })
+})
 
 // MARK: - foot
-
 tableView.magiRefresh.bindStyleForFooterRefresh(themeColor: UIColor.red,
                                                  refreshStyle: MagiRefreshStyle.animatableArrow,
                                                  completion: {
@@ -177,26 +223,25 @@ tableView.magiRefresh.bindStyleForFooterRefresh(themeColor: UIColor.red,
 })
 
 // MARK: - auto refresh
-
 tableView.magiRefresh.footer?.isAutoRefreshOnFoot = true
 ```
 * 方式二
 ```Swift
-   let header = MagiArrowHeader()
-   header.refreshClosure = { [weak self] in
-            
-   }
- tableView.magiRefresh.header = header
+let header = MagiArrowHeader()
+header.magiRefreshingClosure {  [weak self] in
+      print("加载完成处理逻辑")
+}
+tableView.magiRefresh.header = header
 ```
 
 * 方式三 全局配置
 ```Swift
- func application(_ application: UIApplication, didFinishLaunchingWithOptions 
-                  launchOptions: [UIApplicationLaunchOptionsKey:    Any]?) -> Bool {
-        MagiRefreshDefaults.shared.headerDefaultStyle = .replicatorAllen
+func application(_ application: UIApplication, didFinishLaunchingWithOptions 
+                  launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+       MagiRefreshDefaults.shared.headerDefaultStyle = .replicatorAllen
 	
-        return true
-  }
+       return true
+}
 
 // MARK: - global
 
@@ -207,25 +252,25 @@ tableView.magiRefresh.bindStyleForHeaderRefresh {
 ```
 ##### 3.手动触发刷新
 ```Swift
- tableView.magiRefresh.header?.beginRefreshing()
- tableView.magiRefresh.footer?.beginRefreshing()
+tableView.magiRefresh.header?.beginRefreshing()
+tableView.magiRefresh.footer?.beginRefreshing()
 ```
 
 ##### 4.结束刷新
 ```Swift
 
 /*
-	一般方式结束刷新
+一般方式结束刷新
 */
 func endRefreshing()
  
 /*
-	结束刷新且需要提示文字
+结束刷新且需要提示文字
 */
 func endRefreshingWithAlertText(_ text: String = "", completion: (()->())?)
 
 /*
-	结束刷新且不再需要刷新功能
+结束刷新且不再需要刷新功能
 */
 func endRefreshingAndNoLongerRefreshingWithAlertText(_ text: String)
 ```
