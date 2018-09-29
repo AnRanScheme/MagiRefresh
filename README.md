@@ -8,13 +8,20 @@
      内置多种动画、可自定义和灵活的iOS下拉刷新框架(Swift实现)
     <br> 
     <br>
-    <a href="https://github.com/AnRanScheme/MagiRefresh/issues/new">Bug提交</a>
+    <a href="https://github.com/AnRanScheme/MagiRefresh/issues/new?template=bug_cn.md">Bug提交</a>
     ·
     <a href="https://github.com/AnRanScheme/MagiRefresh/issues/new">需求提交</a>  
   </p>
 </p> 
 <br>
 
+### Status
+![building](http://img.shields.io/travis/{AnRanScheme}/{MagiRefresh}.svg)
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/AnRanScheme/MagiRefresh/blob/master/LICENSE)
+![CocoaPods Compatible](https://img.shields.io/cocoapods/v/MagiRefresh.svg?style=flat)
+![language](https://img.shields.io/badge/language-swift-orange.svg) 
+![platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
+[![Email](https://img.shields.io/badge/e--mail-andyscheme%40gmail.com-blue.svg)](mailto:andyscheme@gmail.com)
 ****
 
 ### Screenshots
