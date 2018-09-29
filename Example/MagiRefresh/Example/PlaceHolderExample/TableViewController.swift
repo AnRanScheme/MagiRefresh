@@ -43,12 +43,11 @@ class TableViewController: UITableViewController {
             forCellReuseIdentifier: "reuseIdentifier")
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
-        }
-            
+        }  
         else {
             automaticallyAdjustsScrollViewInsets = false
         }
-        //self.navigationController?.navigationBar.isTranslucent = true
+
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 
         tableView.magiRefresh.bindStyleForFooterRefresh(
