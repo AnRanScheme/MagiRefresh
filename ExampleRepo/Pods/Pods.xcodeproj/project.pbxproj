@@ -10,6 +10,7 @@
 		136252979526A52929AD113FB9D63DE5 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AF8209A265F14741685CF33F89C6BEEF /* Image.bundle */; };
 		1AFFA919FE7DB1E7135BC269ED36E3D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		2C16A32BCC8548C120DF17D168CA0C8B /* MagiRingIndicatorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6080113E48DFE54AD08A4BAF40A6B0 /* MagiRingIndicatorHeader.swift */; };
+		2FF3E08C99AC5AB137D1DF951DD8EE15 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F577CA5A28F26554FBB53BA6EA3BCA11 /* arrow.png */; };
 		362FE9FF520000067C9F635D88622949 /* MagiNativeFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECBA62BDB4249427A1CAA214F65C473 /* MagiNativeFooter.swift */; };
 		3C02BAE60F91F2EDD4EF152E59E17958 /* MagiArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C889BC61B5928E9927A51B9D093F47CB /* MagiArcLayer.swift */; };
 		3F5B99E5508F7FD0AF12E7DC015435A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
@@ -79,7 +80,7 @@
 		1424EF3A8331011251100949A82525D5 /* MagiAlertLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagiAlertLabel.swift; path = MagiRefresh/Classes/MagiRefreshCore/MagiAlertLabel.swift; sourceTree = "<group>"; };
 		1919FC1DF528CBF7361E4E03652CBDBA /* MagiRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MagiRefresh.modulemap; sourceTree = "<group>"; };
 		1EB89A0D9022A030A0EE302F7D6082D3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22F060970527FEA85790BFDC6F68BD76 /* MagiRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MagiRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F060970527FEA85790BFDC6F68BD76 /* MagiRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MagiRefresh.framework; path = MagiRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E96951F12DFAC635A564E3F6714556 /* UIView+MagiRefresh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+MagiRefresh.swift"; path = "MagiRefresh/Classes/Extension/UIView+MagiRefresh.swift"; sourceTree = "<group>"; };
 		27FA437004C2D015FC0336F28EE5C099 /* Pods-MagiRefresh_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MagiRefresh_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		2AA5BF0A70F248317E88EB920592040A /* MagiPlaceHolder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagiPlaceHolder.swift; path = MagiRefresh/Classes/PLaceHolder/MagiPlaceHolder.swift; sourceTree = "<group>"; };
@@ -94,11 +95,11 @@
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		66650488879059EAD4D6BA5AE5E4168F /* Pods-MagiRefresh_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MagiRefresh_Example-umbrella.h"; sourceTree = "<group>"; };
 		66FAFDFACB677D10525B1FCB3E17E44C /* UITableView+MagiRefresh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+MagiRefresh.swift"; path = "MagiRefresh/Classes/Extension/UITableView+MagiRefresh.swift"; sourceTree = "<group>"; };
-		68D14BF71DA7DEDC57D3A21D6877209C /* MagiRefresh.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagiRefresh.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		68D14BF71DA7DEDC57D3A21D6877209C /* MagiRefresh.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MagiRefresh.bundle; path = "MagiRefresh-MagiRefresh.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B80576A1AE999F3A86DC7DBD3BA69AC /* Pods-MagiRefresh_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MagiRefresh_Tests-resources.sh"; sourceTree = "<group>"; };
 		700E4BABF041C413914EC28B911E1F6D /* MagiRefreshHeaderConrol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagiRefreshHeaderConrol.swift; path = MagiRefresh/Classes/MagiRefreshCore/MagiRefreshHeaderConrol.swift; sourceTree = "<group>"; };
 		701673644C70D4A5BBB68D7C1849D293 /* MagiRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MagiRefresh-prefix.pch"; sourceTree = "<group>"; };
-		78D2FAAA5BAA921EB44D54B1572B6DBD /* Pods_MagiRefresh_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagiRefresh_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78D2FAAA5BAA921EB44D54B1572B6DBD /* Pods_MagiRefresh_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MagiRefresh_Example.framework; path = "Pods-MagiRefresh_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		803C679BC00F95C68C69924BC6C02321 /* MagiRunTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagiRunTime.swift; path = MagiRefresh/Classes/MagiRunTime.swift; sourceTree = "<group>"; };
 		824E1036EB9AD7F099036628FDF5A0FF /* Pods-MagiRefresh_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MagiRefresh_Example-frameworks.sh"; sourceTree = "<group>"; };
 		84916FDB0DC1FC0B161CD35B71ECC478 /* MagiArrowHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagiArrowHeader.swift; path = MagiRefresh/Classes/UI/Header/MagiArrowHeader.swift; sourceTree = "<group>"; };
@@ -106,7 +107,7 @@
 		8F16B5F6A84D1FEE9EA13078AC19E5D4 /* Pods-MagiRefresh_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MagiRefresh_Example-dummy.m"; sourceTree = "<group>"; };
 		909839EBB6152C3EBF028C06FAE2861A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90D9752F0011BD7B6509BE99E9A6DA9C /* Pods-MagiRefresh_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MagiRefresh_Example.release.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		966B6B9775D5D83F710893BAF1A80CFE /* Pods-MagiRefresh_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MagiRefresh_Example-resources.sh"; sourceTree = "<group>"; };
 		9E07F748FD64CAB644927F98F03A51E4 /* Pods-MagiRefresh_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MagiRefresh_Example.modulemap"; sourceTree = "<group>"; };
 		A02402E74CE4865D9FEC3220831FE8D6 /* Pods-MagiRefresh_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MagiRefresh_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -125,7 +126,7 @@
 		D0D2AA11C4C7C1F04284D19B916B4ACA /* MagiRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MagiRefresh-dummy.m"; sourceTree = "<group>"; };
 		D262A9CA2B1EF32ED5FE124C6FBB2C42 /* Pods-MagiRefresh_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MagiRefresh_Tests-umbrella.h"; sourceTree = "<group>"; };
 		D5DF9FB69D1A01F42C0485C3D4DD8E18 /* Pods-MagiRefresh_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MagiRefresh_Tests-dummy.m"; sourceTree = "<group>"; };
-		D8C8EC109BADE3DDB8024377DF781EE3 /* Pods_MagiRefresh_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagiRefresh_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8C8EC109BADE3DDB8024377DF781EE3 /* Pods_MagiRefresh_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MagiRefresh_Tests.framework; path = "Pods-MagiRefresh_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B03EC6387BBE581F67FA52D5669AC0 /* MagiRefreshProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagiRefreshProtocol.swift; path = MagiRefresh/Classes/MagiRefreshCore/MagiRefreshProtocol.swift; sourceTree = "<group>"; };
 		DC25CBCC1660E0672B6A731407042E0B /* MagiReplicatorFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagiReplicatorFooter.swift; path = MagiRefresh/Classes/UI/Footer/MagiReplicatorFooter.swift; sourceTree = "<group>"; };
 		E55559D7258F4EF3244879C970C6B523 /* Pods-MagiRefresh_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MagiRefresh_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 		EA1C338C6DB43EE3C502ED8BFBE63B1E /* MagiRefresh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MagiRefresh.xcconfig; sourceTree = "<group>"; };
 		F2B8E03A8D40F204C35544608CBC98B9 /* MagiRingIndicatorFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagiRingIndicatorFooter.swift; path = MagiRefresh/Classes/UI/Footer/MagiRingIndicatorFooter.swift; sourceTree = "<group>"; };
 		F47523840CBF00AE81BC68A3811846AB /* Pods-MagiRefresh_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MagiRefresh_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F577CA5A28F26554FBB53BA6EA3BCA11 /* arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = arrow.png; path = MagiRefresh/Assets/Image.bundle/arrow.png; sourceTree = "<group>"; };
 		FDB1D6AC8A0E38C50E7D31C2A7B16825 /* Pods-MagiRefresh_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MagiRefresh_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,6 +200,7 @@
 		3D681D1DE0DAD3EA915C38822122686E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F577CA5A28F26554FBB53BA6EA3BCA11 /* arrow.png */,
 				AF8209A265F14741685CF33F89C6BEEF /* Image.bundle */,
 			);
 			name = Resources;
@@ -312,6 +315,7 @@
 				3D681D1DE0DAD3EA915C38822122686E /* Resources */,
 				0244484F3F382D20D772D820F6E150EF /* Support Files */,
 			);
+			name = MagiRefresh;
 			path = MagiRefresh;
 			sourceTree = "<group>";
 		};
@@ -467,6 +471,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FF3E08C99AC5AB137D1DF951DD8EE15 /* arrow.png in Resources */,
 				136252979526A52929AD113FB9D63DE5 /* Image.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,13 +18,17 @@ public class MagiArrowFooter: MagiRefreshFooterConrol {
     
     fileprivate lazy var arrowImgV: UIImageView = {
         let arrowImgV = UIImageView()
-        let bundle = Bundle(for: MagiArrowFooter.classForCoder())
-        let path = bundle.path(forResource: "Image", ofType: "bundle", inDirectory: nil) ?? ""
+        let curBundle = Bundle(for: MagiArrowFooter.classForCoder())
+        var curBundleDirectory = ""
+        if let curBundleName = curBundle.infoDictionary?["CFBundleName"] as? String {
+            curBundleDirectory = curBundleName+".bundle"
+        }
+        let path = curBundle.path(forResource: "Image", ofType: "bundle", inDirectory: curBundleDirectory) ?? ""
         let urlString = (path as NSString).appendingPathComponent("arrow.png")
         let image = UIImage(contentsOfFile: urlString)
         arrowImgV.image = image
         arrowImgV.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-      
+        
         return arrowImgV
     }()
     
