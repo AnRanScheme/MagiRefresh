@@ -15,6 +15,10 @@
 </p> 
 <br>
 
+### Status
+[![GitHub license](https://img.shields.io/github/license/xorshine/KafkaRefresh.svg)](https://github.com/xorshine/KafkaRefresh/blob/master/LICENSE)
+
+
 ****
 
 ### Screenshots
