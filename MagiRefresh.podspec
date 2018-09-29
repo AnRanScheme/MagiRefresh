@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MagiRefresh'
-  s.version          = '0.0.6'
+  s.version          = '0.0.7'
   s.summary          = 'Animated, customizable, and flexible pull-to-refresh framework for faster and easier iOS development. '
   s.swift_version    = '4.2'
 # This description is used to generate tags and improve search results.
@@ -33,7 +33,7 @@ TODO: Animated, customizable, and flexible pull-to-refresh framework for faster 
   s.source_files = 'MagiRefresh/Classes/**/*'
   
   s.resource_bundles = {
-    'MagiRefresh' => ['MagiRefresh/Assets/Image.bundle']
+    'MagiRefresh' => ['MagiRefresh/Assets/**/*']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
