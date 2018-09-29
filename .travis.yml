@@ -6,11 +6,21 @@ osx_image: xcode10.0
 language: objective-c
 cache: cocoapods
 podfile: ExampleRepo/Podfile
+
+env:
+global:
+- LANG=en_US.UTF-8
+- LC_ALL=en_US.UTF-8
+- XCODE_WORKSPACE=ExampleRepo/MagiRefresh.xcworkspace
+matrix:
+- SCHEME="MagiRefresh-Example"
+
+
 before_install:
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
   - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
-  - pod update
-  - pod install
+  - pod update --project-directory=ExampleRepo
+  - pod install --project-directory=ExampleRepo
 # before_install:
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=ExampleRepo
