@@ -16,9 +16,10 @@
 <br>
 
 ### Status
-[![GitHub license](https://img.shields.io/github/license/xorshine/KafkaRefresh.svg)](https://github.com/AnRanScheme/MagiRefresh/blob/master/LICENSE)
+[![building](http://img.shields.io/travis/{AnRanScheme}/{MagiRefresh}.svg)]
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/AnRanScheme/MagiRefresh/blob/master/LICENSE)
 ![CocoaPods Compatible](https://img.shields.io/cocoapods/v/MagiRefresh.svg?style=flat)
-
+![platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 ****
 
 ### Screenshots
