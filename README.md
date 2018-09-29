@@ -280,28 +280,28 @@ func endRefreshingAndNoLongerRefreshingWithAlertText(_ text: String)
 ```Swift
 /**
  当调用过 ‘endRefreshingAndNoLongerRefreshingWithAlertText’,
- 且重新需要恢复刷新功能室，调用下面方法
- */
- func resumeRefreshAvailable()
+且重新需要恢复刷新功能室，调用下面方法
+*/
+func resumeRefreshAvailable()
 ```
 
 ### 自定义
 
 以MagiRefreshHeaderConrol为例：
 
- ```Swift
+```Swift
 
- override func setupProperties() {
+override func setupProperties() {
        super.setupProperties()
        //初始化属性
- }
+}
 	
  
- override func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
+override func magiDidScrollWithProgress(progress: CGFloat, max: CGFloat) {
        //进度回调
- }
+}
 
- override func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
+override func magiRefreshStateDidChange(_ status: MagiRefreshStatus) {
         super.magiRefreshStateDidChange(status)
 	     switch status {
         case .none:
@@ -315,7 +315,7 @@ func endRefreshingAndNoLongerRefreshingWithAlertText(_ text: String)
         case .willEndRefresh:
             break
         }
-  }
+ }
  ```
  
  ### 小记
