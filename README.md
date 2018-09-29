@@ -20,7 +20,7 @@
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/AnRanScheme/MagiRefresh/blob/master/LICENSE)
 ![CocoaPods Compatible](https://img.shields.io/cocoapods/v/MagiRefresh.svg?style=flat)
 ![platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
-![](https://img.shields.io/badge/platform-ios-lightgrey.svg)
+[![Email](https://img.shields.io/badge/e--mail-andyscheme%40gmail.com-blue.svg)](mailto:andyscheme@gmail.com)
 ****
 
 ### Screenshots
