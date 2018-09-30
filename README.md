@@ -56,18 +56,18 @@
    ```Swift
    // 空数据界面显示
    let placeHolder = MagiPlaceHolder.createPlaceHolderWithClosure(
-                imageName: "search_noData",
-                title: "暂无数据",
-                detailTitle: "",
-                refreshBtnTitle: "") {
-                    print("点击刷新按钮")
-            }
-            placeHolder.contentViewOffset = -100
-            placeHolder.titleLabFont = UIFont.systemFont(ofSize: 18)
-            placeHolder.titleLabTextColor = UIColor.purple
-            tableView.magiRefresh.placeHolder = placeHolder
-            tableView.magiRefresh.placeHolder?.tapBlankViewClosure = {
-                print("点击界面空白区域")
+       imageName: "search_noData",
+       title: "NoData",
+       detailTitle: "",
+       refreshBtnTitle: "") {
+       print("TapRefreshButton")
+   }
+   placeHolder.contentViewOffset = -100
+   placeHolder.titleLabFont = UIFont.systemFont(ofSize: 18)
+   placeHolder.titleLabTextColor = UIColor.purple
+   tableView.magiRefresh.placeHolder = placeHolder
+   tableView.magiRefresh.placeHolder?.tapBlankViewClosure = {
+               print("TapBlankView")
    }       
    tableView.magiRefresh.showPlaceHolder()
    ```
