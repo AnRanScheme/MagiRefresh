@@ -1,6 +1,6 @@
 <p align="center">
   <a href=#>
-    <img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/titleView.png" alt="" width=300 height=200>
+    <img src="https://github.com/AnRanScheme/MagiRefresh/blob/master/Assets/titleView.png" alt="" width=300 height=300>
   </a>
 
   <h3 align="center">MagiRefresh</h3> 
